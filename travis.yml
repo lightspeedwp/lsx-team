@@ -1,7 +1,7 @@
 # Travis CI (MIT License) configuration file for the FoundationPress WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with the FoundationPress WordPress theme .
+# For use with the FoundationPress WordPress theme.
 # @link https://github.com/olefredrik/foundationpress
 
 # Declare project language.
