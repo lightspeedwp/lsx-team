@@ -8,7 +8,7 @@ Requires PHP: 7.0
 Stable tag: 1.1.2
 License: GPLv3
 
-The LSX Team plugin The LSX  eam extension adds the “Team” post type, which you can display front-and-centre on your site.
+The LSX Team plugin The LSX Team extension adds the “Team” post type, which you can display front-and-centre on your site.
 
 == Description ==
 
