@@ -80,7 +80,7 @@ class LSX_TEAM_SCPO_Engine {
 		if ( $this->_check_load_script_css() ) {
 			wp_enqueue_script( 'scporderjs', LSX_TEAM_URL . 'assets/js/scporder.min.js', array( 'jquery', 'jquery-ui-sortable' ), null, true );
 
-			$scporderjs_params = array( 
+			$scporderjs_params = array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'ajax_nonce' => wp_create_nonce( 'scporder' ),
 			 );
@@ -115,7 +115,9 @@ class LSX_TEAM_SCPO_Engine {
 				", $object ) );
 
 				foreach ( $results as $key => $result ) {
-					$wpdb->update( $wpdb->posts, array( 'menu_order' => $key + 1 ), array( 'ID' => $result->ID ) );
+					$wpdb->update( $wpdb->posts,
+						array( 'menu_order' => $key + 1 ),
+					array( 'ID' => $result->ID ) );
 				}
 			}
 		}
@@ -141,7 +143,8 @@ class LSX_TEAM_SCPO_Engine {
 				", $taxonomy ) );
 
 				foreach ( $results as $key => $result ) {
-					$wpdb->update( $wpdb->terms,
+					$wpdb->update(
+						$wpdb->terms,
 						array( 'lsx_team_term_order' => $key + 1 ),
 					array( 'term_id' => $result->term_id ) );
 				}
@@ -182,8 +185,7 @@ class LSX_TEAM_SCPO_Engine {
 			foreach ( $values as $position => $id ) {
 				$wpdb->update( $wpdb->posts,
 					array(
-						'menu_order' =>
-						$menu_order_arr[ $position ],
+						'menu_order' => $menu_order_arr[ $position ],
 					),
 				array( 'ID' => intval( $id ) ) );
 			}
@@ -221,7 +223,8 @@ class LSX_TEAM_SCPO_Engine {
 
 		foreach ( $data as $key => $values ) {
 			foreach ( $values as $position => $id ) {
-				$wpdb->update( $wpdb->terms, array( 'lsx_team_term_order' => $menu_order_arr[ $position ] ), array( 'term_id' => intval( $id ) ) );
+				$wpdb->update( $wpdb->terms,
+				array( 'lsx_team_term_order' => $menu_order_arr[ $position ] ), array( 'term_id' => intval( $id ) ) );
 			}
 		}
 	}
@@ -291,7 +294,7 @@ class LSX_TEAM_SCPO_Engine {
 			return false;
 
 		if ( is_admin() ) {
-			if ( isset( $wp_query->query['post_type'] ) &&  ! isset( $_GET['orderby'] ) ) {
+			if ( isset( $wp_query->query['post_type'] ) && ! isset( $_GET['orderby'] ) ) {
 				if ( array_key_exists( $wp_query->query['post_type'], $objects ) ) {
 					$wp_query->set( 'orderby', 'menu_order' );
 					$wp_query->set( 'order', 'ASC' );

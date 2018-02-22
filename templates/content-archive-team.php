@@ -35,6 +35,7 @@
 		<?php endif; ?>
 
 		<?php if ( empty( $lsx_team->options['display'] ) || empty( $lsx_team->options['display']['team_disable_single'] ) ) : ?>
+		<?php	/* translators: %s: search term */ ?>
 			<a href="<?php the_permalink(); ?>" class="lsx-team-show-more"><?php printf( esc_html__( ' More about %s', 'lsx-team' ), esc_html( strtok( get_the_title(), ' ' ) ) ); ?> <i class="fa fa-long-arrow-right"></i></a>
 		<?php endif; ?>
 	</article>
