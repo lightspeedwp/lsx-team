@@ -9,42 +9,44 @@ get_header(); ?>
 
 <?php lsx_content_wrap_before(); ?>
 
-<div id="primary" class="content-area <?php echo esc_attr(lsx_main_class()); ?>">
+<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
-    <?php lsx_content_before(); ?>
+	<?php lsx_content_before(); ?>
 
-    <main id="main" class="site-main">
+	<main id="main" class="site-main">
 
-        <?php lsx_content_top(); ?>
+		<?php lsx_content_top(); ?>
 
-        <?php if (have_posts()) : ?>
-            <div class="lsx-team-container">
-                <div class="row row-flex">
+		<?php if ( have_posts() ) : ?>
 
-                    <?php
-                    while (have_posts()) {
-                        the_post();
-                        include LSX_TEAM_PATH.'/templates/content-archive-team.php';
-                    }
+			<div class="lsx-team-container">
+				<div class="row row-flex">
 
-                        include LSX_TEAM_PATH.'/templates/content-archive-team-careers-cta.php';
-                    ?>
+					<?php
+						while ( have_posts() ) {
+							the_post();
+							include( LSX_TEAM_PATH . '/templates/content-archive-team.php' );
+						}
 
-                </div>
-            </div>
+						include( LSX_TEAM_PATH . '/templates/content-archive-team-careers-cta.php' );
+					?>
 
-            <?php lsx_paging_nav(); ?>
+				</div>
+			</div>
 
-        <?php else : ?>
-            <?php get_template_part('partials/content', 'none'); ?>
+			<?php lsx_paging_nav(); ?>
 
-        <?php endif; ?>
+		<?php else : ?>
 
-        <?php lsx_content_bottom(); ?>
+			<?php get_template_part( 'partials/content', 'none' ); ?>
 
-    </main><!-- #main -->
+		<?php endif; ?>
 
-    <?php lsx_content_after(); ?>
+		<?php lsx_content_bottom(); ?>
+
+	</main><!-- #main -->
+
+	<?php lsx_content_after(); ?>
 
 </div><!-- #primary -->
 
@@ -52,5 +54,4 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 
-<?php
-get_footer();
+<?php get_footer();
