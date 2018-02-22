@@ -9,31 +9,29 @@ get_header(); ?>
 
 <?php lsx_content_wrap_before(); ?>
 
-<div id="primary" class="content-area <?php echo esc_attr(lsx_main_class()); ?>">
+<div id="primary" class="content-area <?php echo esc_attr( lsx_main_class() ); ?>">
 
-    <?php lsx_content_before(); ?>
+	<?php lsx_content_before(); ?>
 
-    <main id="main" class="site-main">
+	<main id="main" class="site-main">
 
-        <?php lsx_content_top(); ?>
+		<?php lsx_content_top(); ?>
 
-        <?php if (have_posts()) : ?>
-    <?php
-    while (have_posts()) :
-        the_post();
-?>
+		<?php if ( have_posts() ) : ?>
 
-        <?php include LSX_TEAM_PATH.'/templates/content-single-team.php'; ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-    <?php endwhile; ?>
+				<?php include( LSX_TEAM_PATH . '/templates/content-single-team.php' ); ?>
 
-        <?php endif; ?>
+			<?php endwhile; ?>
 
-        <?php lsx_content_bottom(); ?>
+		<?php endif; ?>
 
-    </main><!-- #main -->
+		<?php lsx_content_bottom(); ?>
 
-    <?php lsx_content_after(); ?>
+	</main><!-- #main -->
+
+	<?php lsx_content_after(); ?>
 
 </div><!-- #primary -->
 
@@ -41,5 +39,4 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 
-<?php
-get_footer();
+<?php get_footer();
