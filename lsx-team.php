@@ -100,19 +100,19 @@ add_action( 'admin_init', 'lsx_team_api_admin_init' );
 /* ======================= Below is the Plugin Class init ========================= */
 
 // Post Type and Custom Fields
-require_once( LSX_TEAM_PATH . '/classes/class-team-admin.php' );
+require_once( LSX_TEAM_PATH . '/classes/class-lsx-team-admin.php' );
 
 // Frontend resources
-require_once( LSX_TEAM_PATH . '/classes/class-team-frontend.php' );
+require_once( LSX_TEAM_PATH . '/classes/class-lsx-team-frontend.php' );
 
 // Shortcode
-require_once( LSX_TEAM_PATH . '/classes/class-team.php' );
+require_once( LSX_TEAM_PATH . '/classes/class-lsx-team.php' );
 
 // Widget
-require_once( LSX_TEAM_PATH . '/classes/class-team-widget.php' );
+require_once( LSX_TEAM_PATH . '/classes/class-lsx-team-widget.php' );
 
 // Template Tag and functions
 require_once( LSX_TEAM_PATH . '/includes/functions.php' );
 
 // Post reorder
-require_once( LSX_TEAM_PATH . '/includes/post-order.php' );
+require_once( LSX_TEAM_PATH . '/includes/class-lsx-team-scpo-engine.php' );
