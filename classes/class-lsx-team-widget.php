@@ -147,7 +147,7 @@ class LSX_Team_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function form($instance) {
+	function form( $instance ) {
 		$defaults = array(
 			'title' => 'Team Members',
 			'title_link' => '',

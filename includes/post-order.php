@@ -78,7 +78,7 @@ class LSX_TEAM_SCPO_Engine {
 
 	public function load_script_css() {
 		if ( $this->_check_load_script_css() ) {
-			wp_enqueue_script( 'scporderjs', LSX_TEAM_URL . 'assets/js/scporder.min.js', array(  'jquery', 'jquery-ui-sortable' ), null, true );
+			wp_enqueue_script( 'scporderjs', LSX_TEAM_URL . 'assets/js/scporder.min.js', array( 'jquery', 'jquery-ui-sortable' ), null, true );
 
 			$scporderjs_params = array( 
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -96,7 +96,7 @@ class LSX_TEAM_SCPO_Engine {
 		$objects = $this->get_lsx_team_scporder_options_objects();
 		$tags = $this->get_lsx_team_scporder_options_tags();
 
-		if ( !empty( $objects ) ) {
+		if ( ! empty( $objects ) ) {
 			foreach ( $objects as $object => $object_data ) {
 				$result = $wpdb->get_results( $wpdb->prepare( "
 					SELECT count( * ) as cnt, max( menu_order ) as max, min( menu_order ) as min
@@ -115,12 +115,12 @@ class LSX_TEAM_SCPO_Engine {
 				", $object ) );
 
 				foreach ( $results as $key => $result ) {
-					$wpdb->update( $wpdb->posts, array(  'menu_order' => $key + 1 ), array(  'ID' => $result->ID ) );
+					$wpdb->update( $wpdb->posts, array( 'menu_order' => $key + 1 ), array( 'ID' => $result->ID ) );
 				}
 			}
 		}
 
-		if ( !empty( $tags ) ) {
+		if ( ! empty( $tags ) ) {
 			foreach ( $tags as $taxonomy => $taxonomy_data ) {
 				$result = $wpdb->get_results( $wpdb->prepare( "
 					SELECT count( * ) as cnt, max( lsx_team_term_order ) as max, min( lsx_team_term_order ) as min
@@ -141,7 +141,9 @@ class LSX_TEAM_SCPO_Engine {
 				", $taxonomy ) );
 
 				foreach ( $results as $key => $result ) {
-					$wpdb->update( $wpdb->terms, array(  'lsx_team_term_order' => $key + 1 ), array(  'term_id' => $result->term_id ) );
+					$wpdb->update( $wpdb->terms,
+						array( 'lsx_team_term_order' => $key + 1 ),
+					array( 'term_id' => $result->term_id ) );
 				}
 			}
 		}
@@ -178,7 +180,12 @@ class LSX_TEAM_SCPO_Engine {
 
 		foreach ( $data as $key => $values ) {
 			foreach ( $values as $position => $id ) {
-				$wpdb->update( $wpdb->posts, array(  'menu_order' => $menu_order_arr[$position] ), array(  'ID' => intval( $id ) ) );
+				$wpdb->update( $wpdb->posts,
+					array(
+						'menu_order' =>
+						$menu_order_arr[ $position ],
+					),
+				array( 'ID' => intval( $id ) ) );
 			}
 		}
 	}
@@ -214,7 +221,7 @@ class LSX_TEAM_SCPO_Engine {
 
 		foreach ( $data as $key => $values ) {
 			foreach ( $values as $position => $id ) {
-				$wpdb->update( $wpdb->terms, array(  'lsx_team_term_order' => $menu_order_arr[$position] ), array(  'term_id' => intval( $id ) ) );
+				$wpdb->update( $wpdb->terms, array( 'lsx_team_term_order' => $menu_order_arr[ $position ] ), array( 'term_id' => intval( $id ) ) );
 			}
 		}
 	}
@@ -305,7 +312,7 @@ class LSX_TEAM_SCPO_Engine {
 				}
 			}
 
-			if ( !$active )
+			if ( ! $active )
 				return false;
 
 			if ( isset( $wp_query->query['suppress_filters'] ) ) {
@@ -314,9 +321,9 @@ class LSX_TEAM_SCPO_Engine {
 				if ( $wp_query->get( 'order' ) == 'DESC' )
 					$wp_query->set( 'order', 'ASC' );
 			} else {
-				if ( !$wp_query->get( 'orderby' ) )
+				if ( ! $wp_query->get( 'orderby' ) )
 					$wp_query->set( 'orderby', 'menu_order' );
-				if ( !$wp_query->get( 'order' ) )
+				if ( ! $wp_query->get( 'order' ) )
 					$wp_query->set( 'order', 'ASC' );
 			}
 		}
@@ -375,7 +382,7 @@ class LSX_TEAM_SCPO_Engine {
 	}
 
 	public function get_lsx_team_scporder_options_tags() {
-		return array( 
+		return array(
 			'team_role' => esc_html_x( 'Role', 'taxonomy singular name', 'lsx-team' ),
 		);
 	}

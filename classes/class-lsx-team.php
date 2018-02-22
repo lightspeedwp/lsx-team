@@ -293,7 +293,7 @@ class LSX_Team {
 				";
 
 				if ( ! $carousel ) {
-					$output .= "</div>";
+					$output .= '</div>';
 
 					if ( $count == $columns && $team->post_count > $count_global ) {
 						$output .= '</div>';
@@ -306,10 +306,10 @@ class LSX_Team {
 			}
 
 			if ( ! $carousel ) {
-				$output .= "</div>";
+				$output .= '</div>';
 			}
 
-			$output .= "</div>";
+			$output .= '</div>';
 
 			return $output;
 		}
