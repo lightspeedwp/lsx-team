@@ -240,7 +240,13 @@ class LSX_TEAM_SCPO_Engine {
 		foreach ( $data as $key => $values ) {
 			foreach ( $values as $position => $id ) {
 				$wpdb->update( $wpdb->terms,
-				array( 'lsx_team_term_order' => $menu_order_arr[ $position ] ), array( 'term_id' => intval( $id ) ) );
+					array(
+						'lsx_team_term_order' => $menu_order_arr[ $position ],
+					),
+					array(
+						'term_id' => intval( $id ),
+					)
+				);
 			}
 		}
 	}
