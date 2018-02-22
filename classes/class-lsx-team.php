@@ -102,7 +102,7 @@ class LSX_Team {
 	 * Returns the shortcode output markup
 	 */
 	public function output( $atts ) {
-		extract( shortcode_atts( array(
+		extract( shortcode_atts( array (
 			'columns' => 4,
 			'orderby' => 'name',
 			'order' => 'ASC',
