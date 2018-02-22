@@ -116,8 +116,13 @@ class LSX_TEAM_SCPO_Engine {
 
 				foreach ( $results as $key => $result ) {
 					$wpdb->update( $wpdb->posts,
-						array( 'menu_order' => $key + 1 ),
-					array( 'ID' => $result->ID ) );
+						array(
+							'menu_order' => $key + 1,
+						),
+						array(
+							'ID' => $result->ID,
+						)
+					);
 				}
 			}
 		}
@@ -145,8 +150,13 @@ class LSX_TEAM_SCPO_Engine {
 				foreach ( $results as $key => $result ) {
 					$wpdb->update(
 						$wpdb->terms,
-						array( 'lsx_team_term_order' => $key + 1 ),
-					array( 'term_id' => $result->term_id ) );
+						array(
+							'lsx_team_term_order' => $key + 1,
+						),
+						array(
+							'term_id' => $result->term_id,
+						)
+					);
 				}
 			}
 		}
@@ -187,7 +197,10 @@ class LSX_TEAM_SCPO_Engine {
 					array(
 						'menu_order' => $menu_order_arr[ $position ],
 					),
-				array( 'ID' => intval( $id ) ) );
+					array(
+						'ID' => intval( $id ),
+					)
+				);
 			}
 		}
 	}
@@ -213,7 +226,10 @@ class LSX_TEAM_SCPO_Engine {
 		$menu_order_arr = array();
 
 		foreach ( $id_arr as $key => $id ) {
-			$results = $wpdb->get_results( "SELECT lsx_team_term_order FROM $wpdb->terms WHERE term_id = " . intval( $id ) );
+			$results = $wpdb->get_results( "
+				SELECT lsx_team_term_order 
+				FROM $wpdb->terms 
+				WHERE term_id = " . intval( $id ) );
 			foreach ( $results as $result ) {
 				$menu_order_arr[] = $result->lsx_team_term_order;
 			}
