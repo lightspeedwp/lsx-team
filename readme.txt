@@ -1,14 +1,14 @@
 === LSX Team ===
 Contributors: feedmymedia
 Donate link: https://www.lsdev.biz/product/lsx-team/
-Tags: team, post type, front-end
+Tags: team, post type, front-end, team widget, team display
 Requires at least: 4.3
 Tested up to: 4.9.4
 Requires PHP: 7.0
 Stable tag: 1.1.0
 License: GPLv3
 
-The LSX Team plugin The LSX Team extension adds the “Team” post type, which you can display front-and-centre on your site.
+The LSX Team plugins adds the “Team” post type, which you can display front-and-centre on your site.
 
 == Description ==
 People like to see a face behind a business, it gives you a more personal, approachable relationship with your users. 
