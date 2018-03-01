@@ -624,7 +624,7 @@ class CMB_Image_Field extends CMB_File_Field {
 		);
 
 		$image = wp_get_attachment_image_src( $id, $size );
-		esc_attr( reset( $image ) );
+		echo esc_attr( reset( $image ) );
 
 		die(); // this is required to return a proper result
 	}
