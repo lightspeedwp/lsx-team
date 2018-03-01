@@ -114,9 +114,14 @@ class LSX_Team_Admin {
 		//$prefix = 'lsx_team_';
 		$prefix = 'lsx_';
 
-		$users = get_users( array(
-			'role__in' => array( 'administrator', 'editor', 'author' ),
-		) );
+		$users = get_transient( 'lsx_team_users' );
+		if ( false === $users || '' === $users ) {
+			$users = get_users( array(
+				'role__in' => array( 'administrator', 'editor', 'author' ),
+			) );
+			set_transient( 'lsx_team_users', $users, 5*60 );
+		}
+
 
 		foreach ( $users as $user ) {
 			$user_array[] = array(
