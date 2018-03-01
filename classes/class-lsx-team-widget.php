@@ -18,7 +18,7 @@ class LSX_Team_Widget extends WP_Widget {
 		parent::__construct( 'LSX_Team_Widget', esc_html__( 'LSX Team Members', 'lsx-team' ), $widget_ops );
 	}
 
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		extract( $args );
 
 		$title = $instance['title'];
@@ -120,7 +120,7 @@ class LSX_Team_Widget extends WP_Widget {
 		echo wp_kses_post( $after_widget );
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		$instance['title'] 				= wp_kses_post( force_balance_tags( $new_instance['title'] ) );
@@ -147,7 +147,7 @@ class LSX_Team_Widget extends WP_Widget {
 		return $instance;
 	}
 
-	function form( $instance ) {
+	public function form( $instance ) {
 		$defaults = array(
 			'title' => 'Team Members',
 			'title_link' => '',
@@ -214,9 +214,9 @@ class LSX_Team_Widget extends WP_Widget {
 			<?php
 				$options = array( '1', '2', '3', '4' );
 
-				foreach ( $options as $option ) {
+			foreach ( $options as $option ) {
 					echo '<option value="' . lcfirst( esc_attr( $option ) ) . '" id="' . esc_attr( $option ) . '"', lcfirst( $option ) == $columns ? ' selected="selected"' : '', '>', esc_html( $option ), '</option>';
-				}
+			}
 			?>
 			</select>
 		</p>
@@ -234,9 +234,9 @@ class LSX_Team_Widget extends WP_Widget {
 					esc_html__( 'Menu (WP dashboard order)', 'lsx-team' ) => 'menu_order',
 				);
 
-				foreach ( $options as $name => $value ) {
+			foreach ( $options as $name => $value ) {
 					echo '<option value="' . esc_attr( $value ) . '" id="' . esc_attr( $value ) . '"', $orderby == $value ? ' selected="selected"' : '', '>', esc_html( $name ), '</option>';
-				}
+			}
 			?>
 			</select>
 		</p>
@@ -249,9 +249,9 @@ class LSX_Team_Widget extends WP_Widget {
 					esc_html__( 'Descending', 'lsx-team' ) => 'DESC',
 				);
 
-				foreach ( $options as $name => $value ) {
+			foreach ( $options as $name => $value ) {
 					echo '<option value="' . esc_attr( $value ) . '" id="' . esc_attr( $value ) . '"', $order == $value ? ' selected="selected"' : '', '>', esc_html( $name ), '</option>';
-				}
+			}
 			?>
 			</select>
 		</p>
@@ -265,9 +265,9 @@ class LSX_Team_Widget extends WP_Widget {
 				<?php esc_html_e( 'All Roles', 'lsx-team' ); ?>
 			</option>
 			<?php
-				foreach ( $options as $option ) {
+			foreach ( $options as $option ) {
 					echo '<option value="' . esc_attr( $option->slug ) . '" id="' . esc_attr( $option->slug ) . '"', $role == $option->slug ? ' selected="selected"' : '', '>', esc_html( $option->name ), '</option>';
-				}
+			}
 			?>
 			</select>
 			<small><?php esc_html_e( 'Display team members within a specific role', 'lsx-team' ); ?></small>
@@ -291,9 +291,9 @@ class LSX_Team_Widget extends WP_Widget {
 					esc_html__( 'Full Content', 'lsx-team' ) => 'full',
 				);
 
-				foreach ( $options as $name => $value ) {
+			foreach ( $options as $name => $value ) {
 					echo '<option value="' . esc_attr( $value ) . '" id="' . esc_attr( $value ) . '"', $display == $value ? ' selected="selected"' : '', '>', esc_html( $name ), '</option>';
-				}
+			}
 			?>
 			</select>
 		</p>
