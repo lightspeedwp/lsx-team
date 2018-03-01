@@ -63,7 +63,9 @@ class CMB_Meta_Box {
 			$post_id = $_GET['post'];
 
 		elseif( isset( $_POST['post_ID'] ) )
-			$post_id = $_POST['post_ID'];
+			 && wp_verify_nonce( sanitize_key( $_POST['foo_nonce'] ), 'foo_action' )
+) {
+			$post_id = sanitize_text_field( wp_unslash( $_POST['post_ID'] ) );
 
 		elseif ( ! empty( $post->ID ) )
 			$post_id = $post->ID;

@@ -620,11 +620,11 @@ class CMB_Image_Field extends CMB_File_Field {
 		$size = array(
 			intval( $_POST['width'] ),
 			intval( $_POST['height'] ),
-			'crop' => (bool) $_POST['crop']
+			'crop' => (bool) $_POST['crop'],
 		);
 
 		$image = wp_get_attachment_image_src( $id, $size );
-		echo reset( $image );
+		esc_attr( reset( $image ) );
 
 		die(); // this is required to return a proper result
 	}
@@ -684,7 +684,8 @@ class CMB_Date_Field extends CMB_Field {
 
 	public function html() { ?>
 
-		<input <?php $this->id_attr(); ?> <?php $this->boolean_attr(); ?> <?php $this->class_attr( 'cmb_text_small cmb_datepicker' ); ?> type="text" <?php $this->name_attr(); ?> value="<?php echo esc_attr( $this->value ); ?>" />
+		<input <?php $this->id_attr(); ?> <?php $this->boolean_attr(); ?> <?php $this->class_attr( 'cmb_text_small cmb_datepicker' ); ?> type="text" <?php $this->name_attr(); ?> value="<?php echo esc_attr( $this->value ); ?>" 
+		/>
 
 	<?php }
 }
