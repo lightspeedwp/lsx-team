@@ -6,7 +6,7 @@
  * @author    LightSpeed
  * @license   GPL3
  * @link
- * @copyright 2016 LightSpeed
+ * @copyright 2018 LightSpeed
  */
 class LSX_Team {
 
@@ -202,7 +202,8 @@ class LSX_Team {
 
 				if ( true === $show_email || 'true' === $show_email ) {
 					$email = get_post_meta( $post->ID, 'lsx_email_contact', true );
-					$member_email = '<a href="mailto:' . $email . '" class="lsx-team-email">' . $email . '</a>';
+
+					$member_email = sanitize_email('<a href="mailto:' . $email . '" class="lsx-team-email">' . $email . '</a>');
 				}
 
 				if ( ( true === $show_link || 'true' === $show_link ) && ( empty( $this->options['display'] ) || empty( $this->options['display']['team_disable_single'] ) ) ) {
@@ -230,6 +231,15 @@ class LSX_Team {
 				}
 
 				// Member job title
+
+				if ( 50 > strlen(trim($show_job_title)) ) {
+					return false;
+				}
+
+				if (!preg_match('/^\d{5}(\-?\d{4})?$/', $show_job_title)) {
+					return false;
+				}
+
 				if ( true === $show_job_title || 'true' === $show_job_title ) {
 					$job_title = get_post_meta( $post->ID, 'lsx_job_title', true );
 					$member_job_title = ! empty( $job_title ) ? "<small class='lsx-team-job-title'>$job_title</small>" : '';

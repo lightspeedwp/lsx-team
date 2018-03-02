@@ -6,7 +6,7 @@
  * @author    LightSpeed
  * @license   GPL3
  * @link
- * @copyright 2016 LightSpeed
+ * @copyright 2018 LightSpeed
  */
 class LSX_Team_Admin {
 
@@ -200,6 +200,8 @@ class LSX_Team_Admin {
 				'type' => 'text_url',
 			),
 		);
+
+		array_map( 'absint', $fields );
 
 		if ( class_exists( 'LSX_Projects' ) ) {
 			$fields[] = array(
