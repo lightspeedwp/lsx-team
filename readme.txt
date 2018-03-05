@@ -1,7 +1,7 @@
 === LSX Team ===
 Contributors: feedmymedia
 Donate link: https://www.lsdev.biz/product/lsx-team/
-Tags: team, post type, front-end, team widget, team display
+Tags: lsx, post type, team, team widget, team display
 Requires at least: 4.3
 Tested up to: 4.9.4
 Requires PHP: 7.0
