@@ -50,7 +50,7 @@ Yes you can! Join in on our [GitHub repository](https://github.com/lightspeeddev
 
 1. The Settings Panel for LSX Team 
 2. LSX Team Edit Page
-3. LSX Team Widget Fronted 
+3. LSX Team Widget Frontend 
 
 == Changelog ==
 
