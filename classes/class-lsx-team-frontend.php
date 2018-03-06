@@ -6,7 +6,7 @@
  * @author    LightSpeed
  * @license   GPL3
  * @link
- * @copyright 2016 LightSpeed
+ * @copyright 2018 LightSpeed
  */
 class LSX_Team_Frontend {
 
