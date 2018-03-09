@@ -262,7 +262,7 @@ class LSX_Team_Frontend {
 		global $wpdb;
 		$post_ids = array();
 
-		$query = $wpdb->prepare("
+		$results = $wpdb->get_results( $wpdb->prepare("
 			SELECT posts.ID, posts.post_title, terms.slug
 			FROM {$wpdb->posts} AS posts
 			INNER JOIN {$wpdb->term_relationships} as rels
@@ -275,9 +275,7 @@ class LSX_Team_Frontend {
 			AND tax.taxonomy = '%s'
 			AND tax.term_id = terms.term_id
 			ORDER BY terms.lsx_team_term_order, posts.post_name
-         ", 'team', 'publish', 'team_role' );
-
-		$results = $wpdb->get_results( $query );
+         ", 'team', 'publish', 'team_role' ) );
 
 		if ( ! empty( $results ) ) {
 			$post_ids = wp_list_pluck( $results, 'ID' );
