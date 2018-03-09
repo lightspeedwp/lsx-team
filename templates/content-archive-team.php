@@ -12,6 +12,8 @@
 	$job_title = get_post_meta( get_the_ID(), 'lsx_job_title', true );
 ?>
 
+<?php lsx_entry_before(); ?>
+
 <div class="col-xs-12 col-sm-6 col-md-3">
 	<article class="lsx-team-slot">
 		<figure class="lsx-team-avatar">
@@ -40,3 +42,6 @@
 		<?php endif; ?>
 	</article>
 </div>
+
+<?php
+	lsx_entry_after();

@@ -10,6 +10,11 @@
  */
 class LSX_Team_Frontend {
 
+	/**
+	 * Holds the previous role, so we know when to output a new title.
+	 */
+	var $previous_role = '';
+
 	public function __construct() {
 		if ( function_exists( 'tour_operator' ) ) {
 			$this->options = get_option( '_lsx-to_settings', false );
@@ -43,6 +48,11 @@ class LSX_Team_Frontend {
 		add_filter( 'excerpt_more_p', array( $this, 'change_excerpt_more' ) );
 		add_filter( 'excerpt_length', array( $this, 'change_excerpt_length' ) );
 		add_filter( 'excerpt_strip_tags', array( $this, 'change_excerpt_strip_tags' ) );
+
+		if ( ! empty( $this->options['display'] ) && ! empty( $this->options['display']['group_by_role'] ) ) {
+			add_action( 'pre_get_posts', array( $this, 'pre_get_posts_order_by_role' ) );
+			add_action( 'lsx_entry_before', array( $this, 'entry_before' ) );
+		}
 	}
 
 	public function enqueue_scripts( $plugins ) {
@@ -227,6 +237,71 @@ class LSX_Team_Frontend {
 		}
 
 		return $allowed_tags;
+	}
+
+	/**
+	 * @param $query \WP_Query()
+	 *
+	 * @return mixed
+	 */
+	public function pre_get_posts_order_by_role( $query ) {
+		if ( ! is_admin() && $query->is_main_query() && $query->is_post_type_archive( 'team' ) ) {
+			$post_ids = $this->order_by_role_query();
+			if ( ! empty( $post_ids ) ) {
+				$query->set( 'post__in', $post_ids );
+				$query->set( 'orderby', 'post__in' );
+			}
+		}
+		return $query;
+	}
+
+	/**
+	 * Grabs the team members ordered by the Roles Slug and the title alphabetical
+	 */
+	public function order_by_role_query( ){
+		global $wpdb;
+		$post_ids = array();
+
+		$query = "
+			SELECT posts.ID, posts.post_title, terms.slug
+			FROM {$wpdb->posts} AS posts
+			INNER JOIN {$wpdb->term_relationships} as rels
+			INNER JOIN {$wpdb->term_taxonomy} as tax
+			INNER JOIN {$wpdb->terms} as terms
+			WHERE posts.post_type = 'team'
+			AND posts.post_status = 'publish'
+			AND posts.ID = rels.object_id
+			AND rels.term_taxonomy_id = tax.term_taxonomy_id
+			AND tax.taxonomy = 'team_role'
+			AND tax.term_id = terms.term_id
+			ORDER BY terms.lsx_team_term_order, posts.post_name
+         ";
+
+		$results = $wpdb->get_results( $query );
+
+		if ( ! empty( $results ) ) {
+			$post_ids = wp_list_pluck( $results, 'ID');
+		}
+		return $post_ids;
+	}
+
+
+	/**
+	 * Outputs the Role Title if its found
+	 */
+	public function entry_before() {
+		$all_roles = wc_get_object_terms( get_the_ID(), 'team_role' );
+		$this_role = '';
+		$this_role_id = '';
+		if ( ! empty( $all_roles ) ) {
+			$this_role = $all_roles[0];
+			$this_role_id = $this_role->term_id;
+		}
+
+		if ( '' === $this->previous_role || $this->previous_role !== $this_role_id ) {
+			echo '<h2 class="role-title text-center col-xs-12 col-sm-12 col-md-12">' . wp_kses_post( $this_role->name ) . '</h2>';
+			$this->previous_role = $this_role_id;
+		}
 	}
 
 }

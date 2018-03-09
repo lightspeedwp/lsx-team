@@ -412,6 +412,7 @@ class LSX_Team_Admin {
 	public function display_settings( $tab = 'general' ) {
 		if ( 'team' === $tab ) {
 			$this->disable_single_post_field();
+			$this->group_by_role_checkbox();
 			$this->placeholder_field();
 			$this->careers_cta_post_fields();
 		}
@@ -429,6 +430,23 @@ class LSX_Team_Admin {
 			<td>
 				<input type="checkbox" {{#if team_disable_single}} checked="checked" {{/if}} name="team_disable_single" />
 				<small><?php esc_html_e( 'Disable Single Posts.', 'lsx-team' ); ?></small>
+			</td>
+		</tr>
+		<?php
+	}
+
+	/**
+	 * Outputs the Display flags checkbox
+	 */
+	public function group_by_role_checkbox() {
+		?>
+		<tr class="form-field">
+			<th scope="row">
+				<label for="group_by_role"><?php esc_html_e( 'Group By Role', 'lsx-team' ); ?></label>
+			</th>
+			<td>
+				<input type="checkbox" {{#if group_by_role}} checked="checked" {{/if}} name="group_by_role" />
+				<small><?php esc_html_e( 'Groups the Team on the Team archive by the role assigned.', 'lsx-team' ); ?></small>
 			</td>
 		</tr>
 		<?php
