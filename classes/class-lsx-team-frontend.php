@@ -258,7 +258,7 @@ class LSX_Team_Frontend {
 	/**
 	 * Grabs the team members ordered by the Roles Slug and the title alphabetical
 	 */
-	public function order_by_role_query( ){
+	public function order_by_role_query() {
 		global $wpdb;
 		$post_ids = array();
 
@@ -280,7 +280,7 @@ class LSX_Team_Frontend {
 		$results = $wpdb->get_results( $query );
 
 		if ( ! empty( $results ) ) {
-			$post_ids = wp_list_pluck( $results, 'ID');
+			$post_ids = wp_list_pluck( $results, 'ID' );
 		}
 		return $post_ids;
 	}
