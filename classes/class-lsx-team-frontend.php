@@ -288,17 +288,19 @@ class LSX_Team_Frontend {
 	 * Outputs the Role Title if its found
 	 */
 	public function entry_before() {
-		$all_roles = wc_get_object_terms( get_the_ID(), 'team_role' );
-		$this_role = '';
-		$this_role_id = '';
-		if ( ! empty( $all_roles ) ) {
-			$this_role = $all_roles[0];
-			$this_role_id = $this_role->term_id;
-		}
+		if ( is_post_type_archive( 'team' ) ) {
+			$all_roles    = wc_get_object_terms( get_the_ID(), 'team_role' );
+			$this_role    = '';
+			$this_role_id = '';
+			if ( ! empty( $all_roles ) ) {
+				$this_role    = $all_roles[0];
+				$this_role_id = $this_role->term_id;
+			}
 
-		if ( '' === $this->previous_role || $this->previous_role !== $this_role_id ) {
-			echo '<h2 class="role-title text-center col-xs-12 col-sm-12 col-md-12">' . wp_kses_post( $this_role->name ) . '</h2>';
-			$this->previous_role = $this_role_id;
+			if ( '' === $this->previous_role || $this->previous_role !== $this_role_id ) {
+				echo '<h2 class="role-title text-center col-xs-12 col-sm-12 col-md-12">' . wp_kses_post( $this_role->name ) . '</h2>';
+				$this->previous_role = $this_role_id;
+			}
 		}
 	}
 
