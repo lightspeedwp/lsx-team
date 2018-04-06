@@ -232,13 +232,13 @@ class LSX_Team {
 
 				// Member job title
 
-				if ( 50 > strlen( trim( $show_job_title ) ) ) {
+				/*if ( 50 > strlen( trim( $show_job_title ) ) ) {
 					return false;
 				}
 
 				if ( ! preg_match( '/^\d{5}(\-?\d{4})?$/', $show_job_title ) ) {
 					return false;
-				}
+				}*/
 
 				if ( true === $show_job_title || 'true' === $show_job_title ) {
 					$job_title = get_post_meta( $post->ID, 'lsx_job_title', true );
