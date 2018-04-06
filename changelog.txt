@@ -2,6 +2,7 @@
 
 = 1.1.2 =
 * Dev - Removed the deprecated "create_function"
+* Fix - Removing the return false statements stopping the widget from displaying
 
 = 1.1.1 =
 * Dev - Added compatibility with LSX Videos
