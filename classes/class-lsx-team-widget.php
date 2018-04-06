@@ -343,4 +343,11 @@ class LSX_Team_Widget extends WP_Widget {
 
 }
 
-add_action( 'widgets_init', create_function( '', 'return register_widget( "LSX_Team_Widget" );' ) );
+/**
+* Registers the Widget
+*/
+function lsx_team_widget() {
+	register_widget( "LSX_Team_Widget" );
+}
+
+add_action( 'widgets_init', 'lsx_team_widget' );
