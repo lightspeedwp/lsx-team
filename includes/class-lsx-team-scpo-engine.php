@@ -366,7 +366,7 @@ class LSX_TEAM_SCPO_Engine {
 		$taxonomy = $args['taxonomy'];
 		if ( is_array( $taxonomy ) && count( $taxonomy ) == 1 )
 			$taxonomy = $taxonomy[0];
-		if ( ! array_key_exists( $taxonomy, $tags ) )
+		if ( ! array_key_exists( $taxonomy[0], $tags ) )
 			return $orderby;
 
 		$orderby = 't.lsx_team_term_order';
