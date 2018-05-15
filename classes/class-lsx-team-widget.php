@@ -347,7 +347,7 @@ class LSX_Team_Widget extends WP_Widget {
 * Registers the Widget
 */
 function lsx_team_widget() {
-	register_widget( "LSX_Team_Widget" );
+	register_widget( 'LSX_Team_Widget' );
 }
 
 add_action( 'widgets_init', 'lsx_team_widget' );
