@@ -21,7 +21,7 @@
   },
   "homepage": "https://bitbucket.org/feedmycode/lsx-team#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-rtlcss": "^1.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
