@@ -203,7 +203,7 @@ class LSX_Team {
 				if ( true === $show_email || 'true' === $show_email ) {
 					$email = get_post_meta( $post->ID, 'lsx_email_contact', true );
 
-					$member_email = '<a href="mailto:' . sanitize_email( $email ) . '" class="lsx-team-email">' . sanitize_email( $email ) . '</a>' );
+					$member_email = '<a href="mailto:' . sanitize_email( $email ) . '" class="lsx-team-email">' . sanitize_email( $email ) . '</a>';
 				}
 
 				if ( ( true === $show_link || 'true' === $show_link ) && ( empty( $this->options['display'] ) || empty( $this->options['display']['team_disable_single'] ) ) ) {
