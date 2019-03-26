@@ -1,46 +1,61 @@
 # LSX Team
 
-The LSX Team Extension provides a custom post type that allows you to easily show off the people that make up your business.
+The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) adds a section to your website for storing your team members information. 
 
-## Setup
+Create a profile per team member, display them in an attractive carousel and house them all in an archive for all your users to view. 
 
-### 1: Install NPM
-https://nodejs.org/en/
+## Description
+People like to see a face behind a business, it gives you a more personal, approachable relationship with your users. 
 
-### 2: Install Gulp
-`npm install`
+The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) plugin allows you to display your team profiles beautifully on your website. 
 
-This will run the package.json file and download the list of modules to a "node_modules" folder in the plugin.
+## Works with the LSX Theme
+Our theme [theme](https://www.lsdev.biz/product/lsx-wordpress-theme/) works perfectly with the Team Extension, improving internal linking, website SEO and user experience! 
 
-### 3: Gulp Commands
-`gulp watch`
-`gulp compile-css`
-`gulp compile-js`
-`gulp wordpress-lang`
+## Gutenberg Compatible
+Have you updated to the new WordPress Gutenberg editor? We've got you covered! [The LSX Theme](https://lsx.lsdev.biz/) and all of its extensions have been optimised for the Gutenberg update. 
 
-## Post Type and Fields:
+## It's free, and always will be.
+We’re firm believers in open source - that’s why we’re releasing the [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) plugin for free, forever. 
 
-On activation, the LSX Team plugin creates a Team Members post type on your site. 
+## Support
+We offer premium support for this plugin. Premium support that can be purchased via [lsdev.biz](https://www.lsdev.biz/services/support/.
 
-### Team Members Post Type fields and taxonomy
+## Installation
+You can also download and install the extension directly from the backend of your website
 
-- Post Title: Team member's name
-- Post Body: Team member's description
-- Roles: Categorise team members into different roles with the hierarchical Roles taxonomy
-- Featured Image: Team member's photograph or image
-- Job Title: Team member's job title
-- Location: Team member's location
-- Contact Email Address: Team member's email address.
-- Gravatar Email Address: If a featured image has not been set, this field will be used to display the team member's Gravatar if one is available.
-- Telephone Number: Team member's phone number
-- Mobile Number: Team member's mobile number
-- Fax Number: Team member's fax number
-- Skype Name: Team member's skype name
-- Facebook URL: Full link to team member's Facebook profile
-- Twitter URL: Full link to team member's Twitter profile
-- Google Plus URL: Full link to team member's Google Plus profile
-- LinkedIn URL: Full link to team member's LinkedIn profile
-- Site User: If the team member is registered as a user of the site, you can link the team member to the site user.
+1. Login to the backend of your website.
+2. Navigate to the “Plugins” dashboard item.
+3. Select the “Add New” option on the plugins page.
+4. Search for “LSX Team” in the plugin search bar.
+5. Download and activate the plugin.
+
+## Frequently Asked Questions
+### Where can I find LSX Team plugin documentation and user guides?
+For help setting up and configuring the Team plugin please refer to our [user guide](https://www.lsdev.biz/documentation/lsx/team-extension/)
+### Will the LSX Team plugin work with my theme?
+No; Not unless you are making use of the [The LSX theme!](https://lsx.lsdev.biz/) 
+All of the LSX Extensions were built for the LSX theme. Be sure to have it installed and activated for this extension to function. 
+### Where can I report bugs or contribute to the project?
+Bugs can be reported either in our support forum or preferably on the [LSX Team GitHub repository](https://github.com/lightspeeddevelopment/lsx/issues).
+### The LSX Team plugin is awesome! Can I contribute?
+Yes, you can! Join in on our [GitHub repository](https://github.com/lightspeeddevelopment/lsx-team) :)
+
+## Changelog
+
+### 1.1.2
+* Dev -  Fixed Package-Json.
+
+### 1.1.1
+* Dev - Wordpress.org sanatizing recommendations.
+
+### 1.0.0
+* Dev - Initial release.
+
+## Upgrade Notice
+
+## 1.1.2
+Fixed the Package-Json error. 
 
 ## Shortcode:
 
