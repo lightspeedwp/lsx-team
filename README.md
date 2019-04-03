@@ -10,7 +10,7 @@ People like to see a face behind a business, it gives you a more personal, appro
 The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) plugin allows you to display your team profiles beautifully on your website. 
 
 ## Works with the LSX Theme
-Our theme [theme](https://www.lsdev.biz/product/lsx-wordpress-theme/) works perfectly with the Team Extension, improving internal linking, website SEO and user experience! 
+Our  [theme](https://lsx.lsdev.biz/) works perfectly with the Team Extension, improving internal linking, website SEO and user experience! 
 
 ## Gutenberg Compatible
 Have you updated to the new WordPress Gutenberg editor? We've got you covered! [The LSX Theme](https://lsx.lsdev.biz/) and all of its extensions have been optimised for the Gutenberg update. 
