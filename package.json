@@ -38,5 +38,8 @@
     "gulp-wp-pot": "^2.0.3",
     "jshint": "^2.9.4",
     "map-stream": "^0.0.7"
+  },
+  "dependencies": {
+    "extend": "^3.0.2"
   }
 }
