@@ -105,14 +105,16 @@
 
 	// Tab Services
 
-	$tab_service['post_type'] = 'service';
-	$tab_service['title'] = esc_html__( 'Services', 'lsx-team' );
-	$tab_service['posts'] = get_post_meta( get_the_ID(), 'service_to_team', false );
+	if ( is_plugin_active( 'lsx-services/lsx-services.php' ) ) {
+		$tab_service['post_type'] = 'service';
+		$tab_service['title'] = esc_html__( 'Services', 'lsx-team' );
+		$tab_service['posts'] = get_post_meta( get_the_ID(), 'service_to_team', false );
 
-	if ( ! empty( $tab_service['posts'] ) ) {
-		$post_ids = join( ',', $tab_service['posts'] );
-		$tab_service['shortcode'] = '[lsx_services columns="3" include="' . $post_ids . '"]';
-		$tabs[] = $tab_service;
+		if ( ! empty( $tab_service['posts'] ) ) {
+			$post_ids = join( ',', $tab_service['posts'] );
+			$tab_service['shortcode'] = '[lsx_services columns="3" include="' . $post_ids . '"]';
+			$tabs[] = $tab_service;
+		}
 	}
 
 	// Tab Testimonials
