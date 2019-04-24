@@ -153,7 +153,7 @@
 
 				<ul class="lsx-team-socials list-inline">
 					<?php foreach ( $links as $service => $link ) : ?>
-						<li><a href="<?php echo esc_html( $link ); ?>" target="_blank" rel="nofollow"><i class="fa fa-<?php echo esc_html( $service ); ?>" aria-hidden="true"></i></a></li>
+						<li><a href="<?php echo esc_html( $link ); ?>" target="_blank" rel="nofollow noreferrer noopener"><i class="fa fa-<?php echo esc_html( $service ); ?>" aria-hidden="true"></i></a></li>
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>
