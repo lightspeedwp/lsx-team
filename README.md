@@ -5,7 +5,7 @@
 <p align="center">
     <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
     <a href="https://travis-ci.org/lightspeeddevelopment/lsx-team/"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-team.svg?branch=master/" alt="Build Status"></a>
-    <a href="https://woocommerce.com/?aff=2873/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/687474703a2f2f696d672e736869656c64732e696f2f62616467652f44657369676e6564253230666f722d576f6f436f6d6d657263652d6134363439372e737667-1.png" alt="Made for Woocommerce"></a>
+    <a href="https://lsx.lsdev.biz/"><img src="https://lsx.lsdev.biz/wp-content/uploads/2019/06/Designed-for-LSX-Theme-blue.png" alt="Made for LSX"></a>
 </p>
 
 The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) adds a section to your website for storing your team members information. 
