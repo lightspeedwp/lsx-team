@@ -3,6 +3,11 @@
 = 1.1.2 =
 * Dev - Removed the deprecated "create_function"
 * Fix - Removing the return false statements stopping the widget from displaying
+* Fix - Removing the return false statements stopping the widget from displaying
+* Fix - Fixed Array Issue - array_key_exists()
+* Fix - Fixed travis WPCS errors and NPM security vulnerabilities
+* Fix - service tab only will appear if plugin is active
+* Dev - Adding rel tags to the team single social media
 
 = 1.1.1 =
 * Dev - Added compatibility with LSX Videos
