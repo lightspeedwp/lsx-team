@@ -1,4 +1,4 @@
-# Copyright (C) 2017 lsx-team
+# Copyright (C) 2019 lsx-team
 # This file is distributed under the same license as the lsx-team package.
 msgid ""
 msgstr ""
@@ -14,397 +14,406 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: classes/class-team-admin.php:43
+#: classes/class-lsx-team-admin.php:43
 msgctxt "post type general name"
 msgid "Team Members"
 msgstr ""
 
-#: classes/class-team-admin.php:44, includes/post-order.php:373
+#: classes/class-lsx-team-admin.php:44, includes/class-lsx-team-scpo-engine.php:405
 msgctxt "post type singular name"
 msgid "Team Member"
 msgstr ""
 
-#: classes/class-team-admin.php:45
+#: classes/class-lsx-team-admin.php:45
 msgctxt "post type general name"
 msgid "Add New"
 msgstr ""
 
-#: classes/class-team-admin.php:46
+#: classes/class-lsx-team-admin.php:46
 msgid "Add New Team Member"
 msgstr ""
 
-#: classes/class-team-admin.php:47
+#: classes/class-lsx-team-admin.php:47
 msgid "Edit Team Member"
 msgstr ""
 
-#: classes/class-team-admin.php:48
+#: classes/class-lsx-team-admin.php:48
 msgid "New Team Member"
 msgstr ""
 
-#: classes/class-team-admin.php:49
+#: classes/class-lsx-team-admin.php:49
 msgid "All Team Members"
 msgstr ""
 
-#: classes/class-team-admin.php:50
+#: classes/class-lsx-team-admin.php:50
 msgid "View Team Member"
 msgstr ""
 
-#: classes/class-team-admin.php:51
+#: classes/class-lsx-team-admin.php:51
 msgid "Search Team Members"
 msgstr ""
 
-#: classes/class-team-admin.php:52
+#: classes/class-lsx-team-admin.php:52
 msgid "No team members found"
 msgstr ""
 
-#: classes/class-team-admin.php:53
+#: classes/class-lsx-team-admin.php:53
 msgid "No team members found in Trash"
 msgstr ""
 
-#: classes/class-team-admin.php:55
+#: classes/class-lsx-team-admin.php:55
 msgctxt "admin menu"
 msgid "Team Members"
 msgstr ""
 
-#: classes/class-team-admin.php:86
+#: classes/class-lsx-team-admin.php:86
 msgctxt "taxonomy general name"
 msgid "Roles"
 msgstr ""
 
-#: classes/class-team-admin.php:87, includes/post-order.php:379
+#: classes/class-lsx-team-admin.php:87, includes/class-lsx-team-scpo-engine.php:411
 msgctxt "taxonomy singular name"
 msgid "Role"
 msgstr ""
 
-#: classes/class-team-admin.php:88
+#: classes/class-lsx-team-admin.php:88
 msgid "Search Roles"
 msgstr ""
 
-#: classes/class-team-admin.php:89, classes/class-team-widget.php:265
+#: classes/class-lsx-team-admin.php:89, classes/class-lsx-team-widget.php:265
 msgid "All Roles"
 msgstr ""
 
-#: classes/class-team-admin.php:90
+#: classes/class-lsx-team-admin.php:90
 msgid "Parent Role"
 msgstr ""
 
-#: classes/class-team-admin.php:91
+#: classes/class-lsx-team-admin.php:91
 msgid "Parent Role:"
 msgstr ""
 
-#: classes/class-team-admin.php:92
+#: classes/class-lsx-team-admin.php:92
 msgid "Edit Role"
 msgstr ""
 
-#: classes/class-team-admin.php:93
+#: classes/class-lsx-team-admin.php:93
 msgid "Update Role"
 msgstr ""
 
-#: classes/class-team-admin.php:94
+#: classes/class-lsx-team-admin.php:94
 msgid "Add New Role"
 msgstr ""
 
-#: classes/class-team-admin.php:95
+#: classes/class-lsx-team-admin.php:95
 msgid "New Role Name"
 msgstr ""
 
-#: classes/class-team-admin.php:96
+#: classes/class-lsx-team-admin.php:96
 msgid "Roles"
 msgstr ""
 
-#: classes/class-team-admin.php:135
+#: classes/class-lsx-team-admin.php:139
 msgid "Site User"
 msgstr ""
 
-#: classes/class-team-admin.php:142
+#: classes/class-lsx-team-admin.php:146
 msgid "Job Title:"
 msgstr ""
 
-#: classes/class-team-admin.php:147
+#: classes/class-lsx-team-admin.php:151
 msgid "Location:"
 msgstr ""
 
-#: classes/class-team-admin.php:152
+#: classes/class-lsx-team-admin.php:156
 msgid "Contact Email Address:"
 msgstr ""
 
-#: classes/class-team-admin.php:157
+#: classes/class-lsx-team-admin.php:161
 msgid "Gravatar Email Address:"
 msgstr ""
 
-#: classes/class-team-admin.php:158
+#: classes/class-lsx-team-admin.php:162
 msgid "Used for Gravatar if a featured image is not set"
 msgstr ""
 
-#: classes/class-team-admin.php:163
+#: classes/class-lsx-team-admin.php:167
 msgid "Telephone Number:"
 msgstr ""
 
-#: classes/class-team-admin.php:178
+#: classes/class-lsx-team-admin.php:182
 msgid "Skype Name:"
 msgstr ""
 
-#: classes/class-team-admin.php:183
+#: classes/class-lsx-team-admin.php:187
 msgid "Facebook URL"
 msgstr ""
 
-#: classes/class-team-admin.php:188
+#: classes/class-lsx-team-admin.php:192
 msgid "Twitter URL"
 msgstr ""
 
-#: classes/class-team-admin.php:193
+#: classes/class-lsx-team-admin.php:197
 msgid "LinkedIn URL"
 msgstr ""
 
-#: classes/class-team-admin.php:201
+#: classes/class-lsx-team-admin.php:207
 msgid "Projects:"
 msgstr ""
 
-#: classes/class-team-admin.php:220
+#: classes/class-lsx-team-admin.php:226
 msgid "Services:"
 msgstr ""
 
-#: classes/class-team-admin.php:239
+#: classes/class-lsx-team-admin.php:245
 msgid "Testimonials:"
 msgstr ""
 
-#: classes/class-team-admin.php:257
+#: classes/class-lsx-team-admin.php:263
 msgid "Team Member Details"
 msgstr ""
 
-#: classes/class-team-admin.php:349, classes/class-team-admin.php:350
+#: classes/class-lsx-team-admin.php:355, classes/class-lsx-team-admin.php:356
 msgid "Theme Options"
 msgstr ""
 
-#: classes/class-team-admin.php:354
+#: classes/class-lsx-team-admin.php:360
 msgid "Save Changes"
 msgstr ""
 
-#: classes/class-team-admin.php:375
+#: classes/class-lsx-team-admin.php:381
 msgid "Display"
 msgstr ""
 
-#: classes/class-team-admin.php:387
+#: classes/class-lsx-team-admin.php:393
 msgid "API"
 msgstr ""
 
-#: classes/class-team-admin.php:420
+#: classes/class-lsx-team-admin.php:427
 msgid "Disable Single Posts"
 msgstr ""
 
-#: classes/class-team-admin.php:424
+#: classes/class-lsx-team-admin.php:431
 msgid "Disable Single Posts."
 msgstr ""
 
-#: classes/class-team-admin.php:437
+#: classes/class-lsx-team-admin.php:444
+msgid "Group By Role"
+msgstr ""
+
+#: classes/class-lsx-team-admin.php:448
+msgid "Groups the Team on the Team archive by the role assigned."
+msgstr ""
+
+#: classes/class-lsx-team-admin.php:461
 msgid "Placeholder"
 msgstr ""
 
-#: classes/class-team-admin.php:445
+#: classes/class-lsx-team-admin.php:469
 msgid "Choose Image"
 msgstr ""
 
-#: classes/class-team-admin.php:446
+#: classes/class-lsx-team-admin.php:470
 msgid "Delete"
 msgstr ""
 
-#: classes/class-team-admin.php:459
+#: classes/class-lsx-team-admin.php:483
 msgid "Careers CTA"
 msgstr ""
 
-#: classes/class-team-admin.php:464
+#: classes/class-lsx-team-admin.php:488
 msgid "Enable careers CTA"
 msgstr ""
 
-#: classes/class-team-admin.php:468
+#: classes/class-lsx-team-admin.php:492
 msgid "Displays careers CTA mystery man on team archive."
 msgstr ""
 
-#: classes/class-team-admin.php:473
+#: classes/class-lsx-team-admin.php:497
 msgid "Title"
 msgstr ""
 
-#: classes/class-team-admin.php:481
+#: classes/class-lsx-team-admin.php:505
 msgid "Tagline"
 msgstr ""
 
-#: classes/class-team-admin.php:489
+#: classes/class-lsx-team-admin.php:513
 msgid "Link text"
 msgstr ""
 
-#: classes/class-team-admin.php:497
+#: classes/class-lsx-team-admin.php:521
 msgid "Careers page link"
 msgstr ""
 
-#: classes/class-team-admin.php:511
+#: classes/class-lsx-team-admin.php:535
 msgid "Select featured image"
 msgstr ""
 
-#: classes/class-team-admin.php:521
+#: classes/class-lsx-team-admin.php:545
 msgid "Enter team member name"
 msgstr ""
 
-#: classes/class-team-frontend.php:174, classes/class-team-frontend.php:185, includes/settings/display.php:14
+#: classes/class-lsx-team-frontend.php:184, classes/class-lsx-team-frontend.php:195, includes/settings/display.php:14
 msgid "Team"
 msgstr ""
 
-#: classes/class-team-widget.php:18
+#: classes/class-lsx-team-widget.php:18
 msgid "LSX Team Members"
 msgstr ""
 
-#: classes/class-team-widget.php:198
+#: classes/class-lsx-team-widget.php:198
 msgid "Title:"
 msgstr ""
 
-#: classes/class-team-widget.php:202
+#: classes/class-lsx-team-widget.php:202
 msgid "Page Link:"
 msgstr ""
 
-#: classes/class-team-widget.php:204
+#: classes/class-lsx-team-widget.php:204
 msgid "Link the widget to a page"
 msgstr ""
 
-#: classes/class-team-widget.php:207
+#: classes/class-lsx-team-widget.php:207
 msgid "Tagline:"
 msgstr ""
 
-#: classes/class-team-widget.php:209
+#: classes/class-lsx-team-widget.php:209
 msgid "Tagline to display below the widget title"
 msgstr ""
 
-#: classes/class-team-widget.php:212
+#: classes/class-lsx-team-widget.php:212
 msgid "Columns:"
 msgstr ""
 
-#: classes/class-team-widget.php:224
+#: classes/class-lsx-team-widget.php:224
 msgid "Order By:"
 msgstr ""
 
-#: classes/class-team-widget.php:228
+#: classes/class-lsx-team-widget.php:228
 msgid "None"
 msgstr ""
 
-#: classes/class-team-widget.php:229
+#: classes/class-lsx-team-widget.php:229
 msgid "ID"
 msgstr ""
 
-#: classes/class-team-widget.php:230
+#: classes/class-lsx-team-widget.php:230
 msgid "Name"
 msgstr ""
 
-#: classes/class-team-widget.php:231
+#: classes/class-lsx-team-widget.php:231
 msgid "Date"
 msgstr ""
 
-#: classes/class-team-widget.php:232
+#: classes/class-lsx-team-widget.php:232
 msgid "Modified Date"
 msgstr ""
 
-#: classes/class-team-widget.php:233
+#: classes/class-lsx-team-widget.php:233
 msgid "Random"
 msgstr ""
 
-#: classes/class-team-widget.php:234
+#: classes/class-lsx-team-widget.php:234
 msgid "Menu (WP dashboard order)"
 msgstr ""
 
-#: classes/class-team-widget.php:244
+#: classes/class-lsx-team-widget.php:244
 msgid "Order:"
 msgstr ""
 
-#: classes/class-team-widget.php:248
+#: classes/class-lsx-team-widget.php:248
 msgid "Ascending"
 msgstr ""
 
-#: classes/class-team-widget.php:249
+#: classes/class-lsx-team-widget.php:249
 msgid "Descending"
 msgstr ""
 
-#: classes/class-team-widget.php:259
+#: classes/class-lsx-team-widget.php:259
 msgid "Role:"
 msgstr ""
 
-#: classes/class-team-widget.php:273
+#: classes/class-lsx-team-widget.php:273
 msgid "Display team members within a specific role"
 msgstr ""
 
-#: classes/class-team-widget.php:276
+#: classes/class-lsx-team-widget.php:276
 msgid "Maximum amount:"
 msgstr ""
 
-#: classes/class-team-widget.php:278
+#: classes/class-lsx-team-widget.php:278
 msgid "Leave empty to display all"
 msgstr ""
 
-#: classes/class-team-widget.php:281
+#: classes/class-lsx-team-widget.php:281
 msgid "Specify Team Members by ID:"
 msgstr ""
 
-#: classes/class-team-widget.php:283
+#: classes/class-lsx-team-widget.php:283
 msgid "Comma separated list, overrides limit setting"
 msgstr ""
 
-#: classes/class-team-widget.php:286
+#: classes/class-lsx-team-widget.php:286
 msgid "Display:"
 msgstr ""
 
-#: classes/class-team-widget.php:290
+#: classes/class-lsx-team-widget.php:290
 msgid "Excerpt"
 msgstr ""
 
-#: classes/class-team-widget.php:291
+#: classes/class-lsx-team-widget.php:291
 msgid "Full Content"
 msgstr ""
 
-#: classes/class-team-widget.php:301
+#: classes/class-lsx-team-widget.php:301
 msgid "Image size:"
 msgstr ""
 
-#: classes/class-team-widget.php:305
+#: classes/class-lsx-team-widget.php:305
 msgid "Button \"view all\" text:"
 msgstr ""
 
-#: classes/class-team-widget.php:307
+#: classes/class-lsx-team-widget.php:307
 msgid "Leave empty to not display the button"
 msgstr ""
 
-#: classes/class-team-widget.php:311
+#: classes/class-lsx-team-widget.php:311
 msgid "Link to Single"
 msgstr ""
 
-#: classes/class-team-widget.php:315
+#: classes/class-lsx-team-widget.php:315
 msgid "Show Images"
 msgstr ""
 
-#: classes/class-team-widget.php:319
+#: classes/class-lsx-team-widget.php:319
 msgid "Show Roles"
 msgstr ""
 
-#: classes/class-team-widget.php:323
+#: classes/class-lsx-team-widget.php:323
 msgid "Show Job Title"
 msgstr ""
 
-#: classes/class-team-widget.php:327
+#: classes/class-lsx-team-widget.php:327
 msgid "Show Description"
 msgstr ""
 
-#: classes/class-team-widget.php:331
+#: classes/class-lsx-team-widget.php:331
 msgid "Show Social Icons"
 msgstr ""
 
-#: classes/class-team-widget.php:335
+#: classes/class-lsx-team-widget.php:335
 msgid "Carousel"
 msgstr ""
 
-#: classes/class-team-widget.php:339
+#: classes/class-lsx-team-widget.php:339
 msgid "Featured posts"
 msgstr ""
 
-#: classes/class-team.php:241
+#: classes/class-lsx-team.php:251
 msgid "Read More"
 msgstr ""
 
-#: templates/content-archive-team.php:38
+#. translators: %s: search term
+#: templates/content-archive-team.php:41
 msgid " More about %s"
 msgstr ""
 
@@ -416,28 +425,16 @@ msgstr ""
 msgid "Projects"
 msgstr ""
 
-#: templates/content-single-team.php:109, includes/settings/display.php:29
+#: templates/content-single-team.php:110, includes/settings/display.php:29
 msgid "Services"
 msgstr ""
 
-#: templates/content-single-team.php:121, includes/settings/display.php:19
+#: templates/content-single-team.php:123, includes/settings/display.php:19
 msgid "Testimonials"
 msgstr ""
 
-#: templates/content-single-team.php:150
+#: templates/content-single-team.php:152
 msgid "Follow"
-msgstr ""
-
-#: includes/settings/api.php:11
-msgid "Settings"
-msgstr ""
-
-#: includes/settings/api.php:12
-msgid "License Keys"
-msgstr ""
-
-#: includes/settings/api.php:17
-msgid "Please enter your user details (email address, API key, username, etc) below as required for the extensions that you have installed."
 msgstr ""
 
 #: includes/settings/display.php:4

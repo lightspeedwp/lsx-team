@@ -26,7 +26,7 @@ body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a { text-dec
 
 body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a.active { color: black; font-weight: bold; }
 
-body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a:focus { box-shadow: none; }
+body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab-nav li a:focus { -webkit-box-shadow: none; box-shadow: none; }
 
 body.appearance_page_lsx-settings .uix-field-wrapper .ui-tab { display: none; }
 
