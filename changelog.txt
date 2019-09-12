@@ -2,6 +2,7 @@
 
 = 1.1.3 = In Development
 * Dev - Adding the .gitattributes file to remove unnecessary files from the WordPress version.
+* Dev - Added in lazyloading for the sliders.
 
 = 1.1.2 =
 * Dev - Removed the deprecated "create_function"
