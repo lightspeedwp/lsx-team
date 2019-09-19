@@ -37,9 +37,6 @@ require_once( LSX_TEAM_PATH . '/classes/class-lsx-team.php' );
 // Widget
 require_once( LSX_TEAM_PATH . '/classes/class-lsx-team-widget.php' );
 
-//Scheme Class
-require_once( LSX_TEAM_PATH . '/classes/class-lsx-team-schema.php' );
-
 // Template Tag and functions
 require_once( LSX_TEAM_PATH . '/includes/functions.php' );
 

@@ -50,7 +50,6 @@ class LSX_Team_Schema extends LSX_Schema_Graph_Piece {
 		$data = $this->add_custom_field( $data, 'twitter', 'contact_twitter' );
 		$data = $this->add_custom_field( $data, 'Linkedin', 'contact_linkedin' );
 		$data = LSX_Schema_Utils::add_image( $data, $this->context );
-		print_r();
 		return $data;
 	}
 	/**
