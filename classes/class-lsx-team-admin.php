@@ -547,7 +547,6 @@ class LSX_Team_Admin {
 
 		return $title;
 	}
-
 }
 
 $lsx_team_admin = new LSX_Team_Admin();

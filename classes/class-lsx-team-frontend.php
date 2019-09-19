@@ -303,6 +303,15 @@ class LSX_Team_Frontend {
 			}
 		}
 	}
+	/**
+	 * Adds Pieces
+	 */
+
+	public function add_graph_pieces( $pieces, $context ) {
+		$pieces[] = new \LSX_Team_Schema( $context );
+		return $pieces;
+		add_filter( 'wpseo_schema_graph_pieces', array( $this, 'add_graph_pieces' ), 11, 2 );
+	}
 
 }
 

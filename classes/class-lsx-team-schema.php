@@ -2,7 +2,7 @@
 /**
  * The Team Schema for LSX Team
  *
- * @package LSX Team
+ * @package lsx-team
  */
 /**
  * Returns schema Review data.
@@ -49,7 +49,8 @@ class LSX_Team_Schema extends LSX_Schema_Graph_Piece {
 		$data = $this->add_custom_field( $data, 'facebook', 'contact_facebook' );
 		$data = $this->add_custom_field( $data, 'twitter', 'contact_twitter' );
 		$data = $this->add_custom_field( $data, 'Linkedin', 'contact_linkedin' );
-		$data = \lsx\legacy\Schema_Utils::add_image( $data, $this->context );
+		$data = LSX_Schema_Utils::add_image( $data, $this->context );
+		print_r();
 		return $data;
 	}
 	/**
@@ -67,5 +68,4 @@ class LSX_Team_Schema extends LSX_Schema_Graph_Piece {
 		}
 		return $data;
 	}
-}
 }
