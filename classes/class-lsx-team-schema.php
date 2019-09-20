@@ -41,14 +41,9 @@ class LSX_Team_Schema extends LSX_Schema_Graph_Piece {
 			$data['worksFor'] = $this->context->site_represents_reference;
 			$data['memberOf'] = $this->context->site_represents_reference;
 		}
-		$data = $this->add_taxonomy_terms( $data, 'jobTitle', 'role' );
-		$data = $this->add_custom_field( $data, 'email', 'contact_email' );
-		$data = $this->add_custom_field( $data, 'location', 'contact_location' );
-		$data = $this->add_custom_field( $data, 'telephone', 'contact_number' );
-		$data = $this->add_custom_field( $data, 'skype', 'contact_skype' );
-		$data = $this->add_custom_field( $data, 'facebook', 'contact_facebook' );
-		$data = $this->add_custom_field( $data, 'twitter', 'contact_twitter' );
-		$data = $this->add_custom_field( $data, 'Linkedin', 'contact_linkedin' );
+		$data = $this->add_custom_field( $data, 'jobTitle', 'lsx_job_title' );
+		$data = $this->add_custom_field( $data, 'email', 'lsx_email_contact' );
+		$data = $this->add_custom_field( $data, 'telephone', 'lsx_tel' );
 		$data = LSX_Schema_Utils::add_image( $data, $this->context );
 		return $data;
 	}
