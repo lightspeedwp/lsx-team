@@ -53,6 +53,8 @@ class LSX_Team_Frontend {
 			add_action( 'pre_get_posts', array( $this, 'pre_get_posts_order_by_role' ) );
 			add_action( 'lsx_entry_before', array( $this, 'entry_before' ) );
 		}
+
+		add_filter( 'wpseo_schema_graph_pieces', array( $this, 'add_graph_pieces' ), 11, 2 );
 	}
 
 	public function enqueue_scripts( $plugins ) {
@@ -303,7 +305,17 @@ class LSX_Team_Frontend {
 			}
 		}
 	}
-
+	/**
+	 * Adds Pieces
+	 */
+	public function add_graph_pieces( $pieces, $context ) {
+		// Scheme Class.
+		if ( class_exists( 'LSX_Schema_Graph_Piece' ) ) {
+			require_once LSX_TEAM_PATH . '/classes/class-lsx-team-schema.php';
+			$pieces[] = new \LSX_Team_Schema( $context );
+		}
+		return $pieces;
+	}
 }
 
 $lsx_team_frontend = new LSX_Team_Frontend();
