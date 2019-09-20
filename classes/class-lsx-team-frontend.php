@@ -310,8 +310,10 @@ class LSX_Team_Frontend {
 	 */
 	public function add_graph_pieces( $pieces, $context ) {
 		// Scheme Class.
-		require_once LSX_TEAM_PATH . '/classes/class-lsx-team-schema.php';
-		$pieces[] = new \LSX_Team_Schema( $context );
+		if ( class_exists( 'LSX_Schema_Graph_Piece' ) ) {
+			require_once LSX_TEAM_PATH . '/classes/class-lsx-team-schema.php';
+			$pieces[] = new \LSX_Team_Schema( $context );
+		}
 		return $pieces;
 	}
 }
