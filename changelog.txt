@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.2.1 = In Development
+* Dev - Checking LSX 2.6 compatibility.
+
+
 = 1.2.0 = In Development
 * Dev - Adding the .gitattributes file to remove unnecessary files from the WordPress version.
 * Dev - Added in lazyloading for the sliders
