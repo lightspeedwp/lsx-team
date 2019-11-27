@@ -97,7 +97,7 @@
 	$tab_project['title'] = esc_html__( 'Projects', 'lsx-team' );
 	$tab_project['posts'] = get_post_meta( get_the_ID(), 'project_to_team', false );
 
-	if ( ! empty( $tab_project['posts'] ) ) {
+	if ( is_plugin_active( 'lsx-projects/lsx-projects.php' ) && ( ! empty( $tab_project['posts'] ) ) ) {
 		$post_ids = join( ',', $tab_project['posts'] );
 		$tab_project['shortcode'] = '[lsx_projects columns="3" include="' . $post_ids . '"]';
 		$tabs[] = $tab_project;
@@ -123,7 +123,7 @@
 	$tab_testimonial['title'] = esc_html__( 'Testimonials', 'lsx-team' );
 	$tab_testimonial['posts'] = get_post_meta( get_the_ID(), 'testimonial_to_team', false );
 
-	if ( ! empty( $tab_testimonial['posts'] ) ) {
+	if ( is_plugin_active( 'lsx-testimonials/lsx-testimonials.php' ) && ( ! empty( $tab_testimonial['posts'] ) ) ) {
 		if ( count( $tab_testimonial['posts'] ) <= 2 ) {
 			$columns = count( $tab_testimonial['posts'] );
 		} else {

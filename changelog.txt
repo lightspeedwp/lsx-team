@@ -1,10 +1,12 @@
 == Changelog ==
 
-= 1.2.1 = In Development
+= 1.2.2 = In Development
+* Dev - Limiting the Testimonials and Projects tabs, they will only appear if the plugins are active.
+
+= 1.2.1 =
 * Dev - Checking LSX 2.6 compatibility.
 
-
-= 1.2.0 = In Development
+= 1.2.0 =
 * Dev - Adding the .gitattributes file to remove unnecessary files from the WordPress version.
 * Dev - Added in lazyloading for the sliders
 * Dev - Added in a "Person" Schema using the Yoast API.
