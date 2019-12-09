@@ -1,7 +1,9 @@
 == Changelog ==
 
-= 1.2.2 = In Development
+= 1.2.2 =
 * Dev - Limiting the Testimonials and Projects tabs, they will only appear if the plugins are active.
+* Dev - General testing to ensure compatibility with latest WordPress version (5.3).
+* Dev - Checking compatibility with LSX 2.6 release.
 
 = 1.2.1 =
 * Dev - Checking LSX 2.6 compatibility.

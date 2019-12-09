@@ -5,7 +5,7 @@ Tags: lsx, post type, team, team widget, team display
 Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 7.0
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
