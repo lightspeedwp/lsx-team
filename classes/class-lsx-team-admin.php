@@ -109,7 +109,7 @@ class LSX_Team_Admin {
 				'slug' => 'team-role',
 			),
 			'show_in_rest'          => true,
-			'rest_base'             => 'team-role',
+			'rest_base'             => 'teamrole',
 			'rest_controller_class' => 'WP_REST_Terms_Controller',
 		);
 
@@ -140,6 +140,7 @@ class LSX_Team_Admin {
 				'name' => esc_html__( 'Featured:', 'lsx-projects' ),
 				'id'   => $prefix . 'featured',
 				'type' => 'checkbox',
+				'show_in_rest' => true,
 			),
 			array(
 				'name' => esc_html__( 'Site User', 'lsx-team' ),
@@ -147,11 +148,13 @@ class LSX_Team_Admin {
 				'allow_none' => true,
 				'type' => 'select',
 				'options' => $user_array,
+				'show_in_rest' => true,
 			),
 			array(
 				'name' => esc_html__( 'Job Title:', 'lsx-team' ),
 				'id'   => $prefix . 'job_title',
 				'type' => 'text',
+				'show_in_rest' => true,
 			),
 			array(
 				'name' => esc_html__( 'Location:', 'lsx-team' ),
