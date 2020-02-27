@@ -108,9 +108,6 @@ class LSX_Team_Admin {
 			'rewrite'           => array(
 				'slug' => 'team-role',
 			),
-			'show_in_rest'          => true,
-			'rest_base'             => 'teamrole',
-			'rest_controller_class' => 'WP_REST_Terms_Controller',
 		);
 
 		register_taxonomy( 'team_role', array( 'team' ), $args );
