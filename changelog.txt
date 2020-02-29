@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.2.3 = In Development
+* Dev - Adding support for the WordPress REST API.
+
 = 1.2.2 = 19 December 2019
 * Dev - Limiting the Testimonials and Projects tabs, they will only appear if the plugins are active.
 * Dev - General testing to ensure compatibility with latest WordPress version (5.3).
