@@ -71,6 +71,12 @@
 
 #lsx-team-slider .slick-arrow.slick-next:before { content: '\f105'; right: 1.5rem; }
 
+.gutenberg-compatible-template.using-gutenberg .lsx-team-block, .gutenberg-compatible-template.using-gutenberg #lsx-team-slider.lsx-team-block { max-width: 60%; width: 60%; margin-right: auto; margin-left: auto; }
+
+.gutenberg-compatible-template.using-gutenberg .lsx-team-block.wide, .gutenberg-compatible-template.using-gutenberg #lsx-team-slider.lsx-team-block.wide { max-width: 80%; width: 80%; margin-right: auto; margin-left: auto; }
+
+.gutenberg-compatible-template.using-gutenberg .lsx-team-block.full, .gutenberg-compatible-template.using-gutenberg #lsx-team-slider.lsx-team-block.full { max-width: 100%; width: calc(100% + 30px); margin-right: -15px; margin-left: -15px; }
+
 .archive.post-type-archive-team .site-main { margin: 0; width: auto; }
 
 .archive.post-type-archive-team .lsx-team-container { margin-bottom: -4.5rem; margin-top: -4.5rem; }
