@@ -2,6 +2,7 @@
 
 = 1.2.3 = In Development
 * Dev - Adding support for the WordPress REST API.
+* Fix - Fixed issue `PHP Deprecated: dbx_post_advanced is deprecated since version 3.7.0! Use add_meta_boxes instead`.
 
 = 1.2.2 = 19 December 2019
 * Dev - Limiting the Testimonials and Projects tabs, they will only appear if the plugins are active.
