@@ -43,7 +43,7 @@
     "extend": "^3.0.2",
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4",
-    "minimist": "^1.2.2",
+    "minimist": "^1.2.3",
     "shelljs": "^0.8.3"
   }
 }
