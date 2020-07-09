@@ -394,18 +394,6 @@ class LSX_Team_Admin {
 
 				$default = false;
 			}
-
-			if ( ! array_key_exists( 'api', $tabs ) ) {
-				$tabs['api'] = array(
-					'page_title'        => '',
-					'page_description'  => '',
-					'menu_title'        => esc_html__( 'API', 'lsx-team' ),
-					'template'          => LSX_TEAM_PATH . 'includes/settings/api.php',
-					'default'           => $default,
-				);
-
-				$default = false;
-			}
 		}
 
 		return $tabs;
