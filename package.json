@@ -44,6 +44,6 @@
     "lodash": "^4.17.19",
     "minimatch": "^3.0.4",
     "minimist": "^1.2.3",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.4"
   }
 }
