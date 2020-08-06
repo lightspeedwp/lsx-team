@@ -1,5 +1,4 @@
 <?php
-namespace lsx_team\classes\admin;
 
 //use CMB_Tab_Field;
 

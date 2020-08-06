@@ -1,5 +1,4 @@
 <?php
-namespace lsx_team\classes;
 
 /**
  * This class loads the other classes and function files

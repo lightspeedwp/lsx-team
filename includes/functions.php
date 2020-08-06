@@ -9,8 +9,6 @@
  * @copyright 2016 LightSpeed
  */
 
-namespace lsx_team\includes;
-
 /**
  * Add our action to init to set up our vars first.
  */

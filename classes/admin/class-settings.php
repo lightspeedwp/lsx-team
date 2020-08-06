@@ -5,11 +5,6 @@
  * @package lsx-team
  */
 
-namespace lsx_team\classes\admin;
-
-/**
- * Contains the settings for each post type \lsx_team\classes\admin\Settings().
- */
 class Settings {
 
 	/**
