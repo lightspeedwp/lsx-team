@@ -21,7 +21,7 @@ class LSX_Team_Frontend {
 
 	public function __construct() {
 
-		//$this->options = \lsx_team\includes\team_get_option();
+		//$this->options = \team_get_option();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 5 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'wp_kses_allowed_html' ), 10, 2 );
