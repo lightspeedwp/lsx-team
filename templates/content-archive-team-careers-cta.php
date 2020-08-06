@@ -4,17 +4,13 @@
  */
 ?>
 
-<?php
-	global $lsx_team;
-?>
-
-<?php if ( isset( $lsx_team->options['display'] ) && ! empty( $lsx_team->options['display']['team_careers_cta_enable'] ) ) : ?>
+<?php if ( ! empty( team_get_option( 'team_careers_cta_enable' ) ) ) : ?>
 	<?php
 		$thumbnail = '<img class="img-responsive wp-post-image" src="https://www.gravatar.com/avatar/none?d=mm&s=170" width="170" />';
-		$title = $lsx_team->options['display']['team_careers_cta_title'];
-		$tagline = $lsx_team->options['display']['team_careers_cta_tagline'];
-		$link_text = $lsx_team->options['display']['team_careers_cta_link_text'];
-		$link = $lsx_team->options['display']['team_careers_cta_link'];
+		$title     = team_get_option( 'team_careers_cta_title' );
+		$tagline   = team_get_option( 'team_careers_cta_tagline' );
+		$link_text = team_get_option( 'team_careers_cta_link_text' );
+		$link      = team_get_option( 'team_careers_cta_link' );
 	?>
 
 	<div class="col-xs-12 col-sm-6 col-md-3">

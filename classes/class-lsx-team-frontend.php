@@ -17,19 +17,24 @@ class LSX_Team_Frontend {
 	 * Holds the previous role, so we know when to output a new title.
 	 */
 	var $previous_role = '';
-	public $options = false;
+
 
 	public function __construct() {
 
-		//$this->options = \team_get_option();
+		$this->options = team_get_option();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 5 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'wp_kses_allowed_html' ), 10, 2 );
 		add_filter( 'template_include', array( $this, 'single_template_include' ), 99 );
 		add_filter( 'template_include', array( $this, 'archive_template_include' ), 99 );
 
-		if ( ! empty( $this->options['display'] ) && ! empty( $this->options['display']['team_disable_single'] ) ) {
+		if ( ! empty( $this->options['team_disable_single'] ) ) {
 			add_action( 'template_redirect', array( $this, 'disable_single' ) );
+		}
+
+		if ( ! empty( $this->options['group_by_role'] ) ) {
+			add_action( 'pre_get_posts', array( $this, 'pre_get_posts_order_by_role' ) );
+			add_action( 'lsx_entry_before', array( $this, 'entry_before' ) );
 		}
 
 		add_action( 'pre_get_posts', array( $this, 'disable_pagination_on_archive' ) );
@@ -45,11 +50,6 @@ class LSX_Team_Frontend {
 		add_filter( 'excerpt_more_p', array( $this, 'change_excerpt_more' ) );
 		add_filter( 'excerpt_length', array( $this, 'change_excerpt_length' ) );
 		add_filter( 'excerpt_strip_tags', array( $this, 'change_excerpt_strip_tags' ) );
-
-		if ( ! empty( $this->options['display'] ) && ! empty( $this->options['display']['group_by_role'] ) ) {
-			add_action( 'pre_get_posts', array( $this, 'pre_get_posts_order_by_role' ) );
-			add_action( 'lsx_entry_before', array( $this, 'entry_before' ) );
-		}
 
 		add_filter( 'wpseo_schema_graph_pieces', array( $this, 'add_graph_pieces' ), 11, 2 );
 	}
@@ -219,7 +219,7 @@ class LSX_Team_Frontend {
 		global $post;
 
 		if ( 'team' === $post->post_type ) {
-			if ( ! empty( $this->options['display'] ) && ! empty( $this->options['display']['team_disable_single'] ) ) {
+			if ( ! empty( team_get_option( 'team_disable_single' ) ) ) {
 				$excerpt_more = '';
 			}
 		}

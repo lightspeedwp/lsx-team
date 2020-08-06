@@ -13,15 +13,7 @@ class LSX_Team {
 	public $options;
 
 	public function __construct() {
-		if ( function_exists( 'tour_operator' ) ) {
-			$this->options = get_option( '_lsx-to_settings', false );
-		} else {
-			$this->options = get_option( '_lsx_settings', false );
-
-			if ( false === $this->options ) {
-				$this->options = get_option( '_lsx_lsx-settings', false );
-			}
-		}
+		$this->options = team_get_option();
 
 		add_action( 'init', array( $this, 'custom_image_sizes' ) );
 		add_filter( 'lsx_banner_allowed_post_types', array( $this, 'lsx_banner_allowed_post_types' ) );
@@ -196,7 +188,7 @@ class LSX_Team {
 				$linkedin = get_post_meta( $post->ID, 'lsx_linkedin', true );
 
 				// Link to single
-				if ( ( true === $show_link || 'true' === $show_link ) && ( empty( $this->options['display'] ) || empty( $this->options['display']['team_disable_single'] ) ) ) {
+				if ( ( true === $show_link || 'true' === $show_link ) && ( empty( team_get_option( 'team_disable_single' ) ) ) ) {
 					$bottom_link = '<a href="' . get_permalink( $post->ID ) . '" class="lsx-team-show-more">More about ' . strtok( $member_name, ' ' ) . '<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>';
 				}
 
@@ -206,7 +198,7 @@ class LSX_Team {
 					$member_email = '<a href="mailto:' . sanitize_email( $email ) . '" class="lsx-team-email">' . sanitize_email( $email ) . '</a>';
 				}
 
-				if ( ( true === $show_link || 'true' === $show_link ) && ( empty( $this->options['display'] ) || empty( $this->options['display']['team_disable_single'] ) ) ) {
+				if ( ( true === $show_link || 'true' === $show_link ) && ( empty( team_get_option( 'team_disable_single' ) ) ) ) {
 					$member_name = '<h5 class="lsx-team-name"><a href="' . get_permalink() . '">' . $member_name . '</a></h5>';
 				} else {
 					$member_name = '<h5 class="lsx-team-name">' . $member_name . '</h5>';
@@ -261,7 +253,7 @@ class LSX_Team {
 				if ( true === $show_image || 'true' === $show_image ) {
 					$member_avatar = $this->get_thumbnail( $post->ID, $size );
 
-					if ( ( true === $show_link || 'true' === $show_link ) && ( empty( $this->options['display'] ) || empty( $this->options['display']['team_disable_single'] ) ) ) {
+					if ( ( true === $show_link || 'true' === $show_link ) && ( empty( $this->options['display'] ) || empty( team_get_option( 'team_disable_single' ) ) ) ) {
 						$member_avatar = "<figure class='lsx-team-avatar'><a href='" . get_permalink() . "'>$member_avatar</a></figure>";
 					} else {
 						$member_avatar = "<figure class='lsx-team-avatar'>$member_avatar</figure>";

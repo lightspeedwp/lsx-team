@@ -24,8 +24,12 @@ add_action( 'init', 'lsx_team_load_plugin_textdomain' );
  * @param  mixed  $default Optional default value
  * @return mixed           Option value
  */
-function team_get_option() {
+function team_get_option( $key = '', $default = false ) {
 	$options = array();
+
+	if ( function_exists( 'cmb2_get_option' ) ) {
+		return cmb2_get_option( 'lsx_team_options', $key, $default );
+	}
 
 	if ( function_exists( 'tour_operator' ) ) {
 		$options = get_option( '_lsx-to_settings', false );
@@ -37,10 +41,6 @@ function team_get_option() {
 		}
 	}
 
-	$cmb2_options = get_option( 'lsx-team-settings' );
-	if ( ! empty( $cmb2_options ) ) {
-		$options['display'] = $cmb2_options;
-	}
 	return $options;
 }
 

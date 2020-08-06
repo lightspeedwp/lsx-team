@@ -25,6 +25,10 @@ define( 'LSX_TEAM_VER', '1.2.3' );
 
 /* ======================= Below is the Plugin Class init ========================= */
 
+// Template Tag and functions.
+require_once LSX_TEAM_PATH . '/includes/functions.php';
+
+// Core Class.
 require_once LSX_TEAM_PATH . '/classes/class-lsx-team-core.php';
 
 // Post Type and Custom Fields.
@@ -38,9 +42,6 @@ require_once LSX_TEAM_PATH . '/classes/class-lsx-team.php';
 
 // Widget.
 require_once LSX_TEAM_PATH . '/classes/class-lsx-team-widget.php';
-
-// Template Tag and functions.
-require_once LSX_TEAM_PATH . '/includes/functions.php';
 
 // Post reorder.
 require_once LSX_TEAM_PATH . '/includes/class-lsx-team-scpo-engine.php';

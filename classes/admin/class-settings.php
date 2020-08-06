@@ -24,27 +24,6 @@ class Settings {
 	protected $screen_id = 'lsx_team_settings';
 
 	/**
-	 * An array of the post types for the Global Downloads field.
-	 *
-	 * @var array
-	 */
-	public $download_types = array();
-
-	/**
-	 * An array of the post types for the Global Defaults field.
-	 *
-	 * @var array
-	 */
-	public $default_types = array();
-
-	/**
-	 * An array of the endpoints for the Endpoint Translation field.
-	 *
-	 * @var array
-	 */
-	public $endpoints = array();
-
-	/**
 	 * Contructor
 	 */
 	public function __construct() {
@@ -58,7 +37,7 @@ class Settings {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return    object \lsx_team\classes\admin\Settings()    A single instance of this class.
+	 * @return    object Settings()    A single instance of this class.
 	 */
 	public static function get_instance() {
 		// If the single instance hasn't been set, set it now.
