@@ -1,5 +1,9 @@
 # Change log
 
+## [1.2.4]
+
+### Changed
+- Remove UIX and Change to CMB2.
 
 ## [[1.2.3]](https://github.com/lightspeeddevelopment/lsx-team/releases/tag/1.2.3) - 2020-03-30
 

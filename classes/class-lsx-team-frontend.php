@@ -8,23 +8,20 @@
  * @link
  * @copyright 2018 LightSpeed
  */
+
+namespace lsx_team\classes;
+
 class LSX_Team_Frontend {
 
 	/**
 	 * Holds the previous role, so we know when to output a new title.
 	 */
 	var $previous_role = '';
+	public $options = false;
 
 	public function __construct() {
-		if ( function_exists( 'tour_operator' ) ) {
-			$this->options = get_option( '_lsx-to_settings', false );
-		} else {
-			$this->options = get_option( '_lsx_settings', false );
 
-			if ( false === $this->options ) {
-				$this->options = get_option( '_lsx_lsx-settings', false );
-			}
-		}
+		//$this->options = \lsx_team\includes\team_get_option();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 5 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'wp_kses_allowed_html' ), 10, 2 );
@@ -55,6 +52,21 @@ class LSX_Team_Frontend {
 		}
 
 		add_filter( 'wpseo_schema_graph_pieces', array( $this, 'add_graph_pieces' ), 11, 2 );
+	}
+
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return    object lsx_team\classes    A single instance of this class.
+	 */
+	public static function get_instance() {
+		// If the single instance hasn't been set, set it now.
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
 	}
 
 	public function enqueue_scripts( $plugins ) {

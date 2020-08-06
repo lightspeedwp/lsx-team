@@ -9,6 +9,8 @@
  * @copyright 2016 LightSpeed
  */
 
+namespace lsx_team\includes;
+
 /**
  * Add our action to init to set up our vars first.
  */
@@ -16,6 +18,33 @@ function lsx_team_load_plugin_textdomain() {
 	load_plugin_textdomain( 'lsx-team', false, basename( LSX_TEAM_PATH ) . '/languages' );
 }
 add_action( 'init', 'lsx_team_load_plugin_textdomain' );
+
+/**
+ * Wrapper function around cmb2_get_option
+ * @since  0.1.0
+ * @param  string $key     Options array key
+ * @param  mixed  $default Optional default value
+ * @return mixed           Option value
+ */
+function team_get_option() {
+	$options = array();
+
+	if ( function_exists( 'tour_operator' ) ) {
+		$options = get_option( '_lsx-to_settings', false );
+	} else {
+		$options = get_option( '_lsx_settings', false );
+
+		if ( false === $options ) {
+			$options = get_option( '_lsx_lsx-settings', false );
+		}
+	}
+
+	$cmb2_options = get_option( 'lsx-team-settings' );
+	if ( ! empty( $cmb2_options ) ) {
+		$options['display'] = $cmb2_options;
+	}
+	return $options;
+}
 
 /**
  * Wraps the output class in a function to be called in templates

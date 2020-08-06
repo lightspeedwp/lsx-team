@@ -8,34 +8,32 @@
  * @link
  * @copyright 2018 LightSpeed
  */
+
+namespace lsx\team\classes;
+
 class LSX_Team_Admin {
 
 	public function __construct() {
-		if ( ! class_exists( 'CMB_Meta_Box' ) ) {
-			require_once( LSX_TEAM_PATH . '/vendor/Custom-Meta-Boxes/custom-meta-boxes.php' );
-		}
-
-		if ( function_exists( 'tour_operator' ) ) {
-			$this->options = get_option( '_lsx-to_settings', false );
-		} else {
-			$this->options = get_option( '_lsx_settings', false );
-
-			if ( false === $this->options ) {
-				$this->options = get_option( '_lsx_lsx-settings', false );
-			}
-		}
+		$this->load_classes();
 
 		add_action( 'init', array( $this, 'post_type_setup' ) );
 		add_action( 'init', array( $this, 'taxonomy_setup' ) );
-		add_filter( 'cmb_meta_boxes', array( $this, 'field_setup' ) );
-		add_action( 'cmb_save_custom', array( $this, 'post_relations' ), 3, 20 );
-		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 
-		add_action( 'init', array( $this, 'create_settings_page' ), 100 );
-		add_filter( 'lsx_framework_settings_tabs', array( $this, 'register_tabs' ), 100, 1 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 
 		add_filter( 'type_url_form_media', array( $this, 'change_attachment_field_button' ), 20, 1 );
 		add_filter( 'enter_title_here', array( $this, 'change_title_text' ) );
+	}
+
+	/**
+	 * Loads the admin subclasses
+	 */
+	private function load_classes() {
+		require_once LSX_TEAM_PATH . 'classes/admin/class-settings.php';
+		$this->settings = \lsx_team\classes\admin\Settings::get_instance();
+
+		require_once LSX_TEAM_PATH . 'classes/admin/class-settings-theme.php';
+		$this->settings_theme = \lsx_team\classes\admin\Settings_Theme::get_instance();
 	}
 
 	public function post_type_setup() {
@@ -117,7 +115,7 @@ class LSX_Team_Admin {
 	}
 
 	public function field_setup( $meta_boxes ) {
-		//$prefix = 'lsx_team_';
+
 		$prefix = 'lsx_';
 
 		$users = get_transient( 'lsx_team_users' );
@@ -137,7 +135,7 @@ class LSX_Team_Admin {
 
 		$fields = array(
 			array(
-				'name' => esc_html__( 'Featured:', 'lsx-projects' ),
+				'name' => esc_html__( 'Featured:', 'lsx-team' ),
 				'id'   => $prefix . 'featured',
 				'type' => 'checkbox',
 				'show_in_rest' => true,
@@ -177,16 +175,6 @@ class LSX_Team_Admin {
 				'id'   => $prefix . 'tel',
 				'type' => 'text',
 			),
-			/*array(
-				'name' => esc_html__( 'Mobile Number:', 'lsx-team' ),
-				'id'   => $prefix . 'mobile',
-				'type' => 'text',
-			),
-			array(
-				'name' => esc_html__( 'Fax Number:', 'lsx-team' ),
-				'id'   => $prefix . 'fax',
-				'type' => 'text',
-			),*/
 			array(
 				'name' => esc_html__( 'Skype Name:', 'lsx-team' ),
 				'id'   => $prefix . 'skype',
@@ -331,197 +319,6 @@ class LSX_Team_Admin {
 
 		wp_enqueue_script( 'lsx-team-admin', LSX_TEAM_URL . 'assets/js/lsx-team-admin.min.js', array( 'jquery' ), LSX_TEAM_VER );
 		wp_enqueue_style( 'lsx-team-admin', LSX_TEAM_URL . 'assets/css/lsx-team-admin.css', array(), LSX_TEAM_VER );
-	}
-
-	/**
-	 * Returns the array of settings to the UIX Class
-	 */
-	public function create_settings_page() {
-		if ( is_admin() ) {
-			if ( ! class_exists( '\lsx\ui\uix' ) && ! function_exists( 'tour_operator' ) ) {
-				include_once LSX_TEAM_PATH . 'vendor/uix/uix.php';
-				$pages = $this->settings_page_array();
-				$uix = \lsx\ui\uix::get_instance( 'lsx' );
-				$uix->register_pages( $pages );
-			}
-
-			if ( function_exists( 'tour_operator' ) ) {
-				add_action( 'lsx_to_framework_display_tab_content', array( $this, 'display_settings' ), 11 );
-			} else {
-				add_action( 'lsx_framework_display_tab_content', array( $this, 'display_settings' ), 11 );
-			}
-		}
-	}
-
-	/**
-	 * Returns the array of settings to the UIX Class
-	 */
-	public function settings_page_array() {
-		$tabs = apply_filters( 'lsx_framework_settings_tabs', array() );
-
-		return array(
-			'settings'  => array(
-				'page_title'  => esc_html__( 'Theme Options', 'lsx-team' ),
-				'menu_title'  => esc_html__( 'Theme Options', 'lsx-team' ),
-				'capability'  => 'manage_options',
-				'icon'        => 'dashicons-book-alt',
-				'parent'      => 'themes.php',
-				'save_button' => esc_html__( 'Save Changes', 'lsx-team' ),
-				'tabs'        => $tabs,
-			),
-		);
-	}
-
-	/**
-	 * Register tabs
-	 */
-	public function register_tabs( $tabs ) {
-		$default = true;
-
-		if ( false !== $tabs && is_array( $tabs ) && count( $tabs ) > 0 ) {
-			$default = false;
-		}
-
-		if ( ! function_exists( 'tour_operator' ) ) {
-			if ( ! array_key_exists( 'display', $tabs ) ) {
-				$tabs['display'] = array(
-					'page_title'        => '',
-					'page_description'  => '',
-					'menu_title'        => esc_html__( 'Display', 'lsx-team' ),
-					'template'          => LSX_TEAM_PATH . 'includes/settings/display.php',
-					'default'           => $default,
-				);
-
-				$default = false;
-			}
-		}
-
-		return $tabs;
-	}
-
-	/**
-	 * Outputs the display tabs settings
-	 *
-	 * @param $tab string
-	 * @return null
-	 */
-	public function display_settings( $tab = 'general' ) {
-		if ( 'team' === $tab ) {
-			$this->disable_single_post_field();
-			$this->group_by_role_checkbox();
-			$this->placeholder_field();
-			$this->careers_cta_post_fields();
-		}
-	}
-
-	/**
-	 * Outputs the Display flags checkbox
-	 */
-	public function disable_single_post_field() {
-		?>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="team_disable_single"><?php esc_html_e( 'Disable Single Posts', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="checkbox" {{#if team_disable_single}} checked="checked" {{/if}} name="team_disable_single" />
-				<small><?php esc_html_e( 'Disable Single Posts.', 'lsx-team' ); ?></small>
-			</td>
-		</tr>
-		<?php
-	}
-
-	/**
-	 * Outputs the Display flags checkbox
-	 */
-	public function group_by_role_checkbox() {
-		?>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="group_by_role"><?php esc_html_e( 'Group By Role', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="checkbox" {{#if group_by_role}} checked="checked" {{/if}} name="group_by_role" />
-				<small><?php esc_html_e( 'Groups the Team on the Team archive by the role assigned.', 'lsx-team' ); ?></small>
-			</td>
-		</tr>
-		<?php
-	}
-
-	/**
-	 * Outputs the flag position field
-	 */
-	public function placeholder_field() {
-		?>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="banner"> <?php esc_html_e( 'Placeholder', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input class="input_image_id" type="hidden" {{#if team_placeholder_id}} value="{{team_placeholder_id}}" {{/if}} name="team_placeholder_id" />
-				<input class="input_image" type="hidden" {{#if team_placeholder}} value="{{team_placeholder}}" {{/if}} name="team_placeholder" />
-				<div class="thumbnail-preview">
-					{{#if team_placeholder}}<img src="{{team_placeholder}}" width="150" />{{/if}}
-				</div>
-				<a {{#if team_placeholder}}style="display:none;"{{/if}} class="button-secondary lsx-thumbnail-image-add" data-slug="team_placeholder"><?php esc_html_e( 'Choose Image', 'lsx-team' ); ?></a>
-				<a {{#unless team_placeholder}}style="display:none;"{{/unless}} class="button-secondary lsx-thumbnail-image-delete" data-slug="team_placeholder"><?php esc_html_e( 'Delete', 'lsx-team' ); ?></a>
-			</td>
-		</tr>
-		<?php
-	}
-
-	/**
-	 * Outputs the careers CTA post fields.
-	 */
-	public function careers_cta_post_fields() {
-		?>
-		<tr class="form-field">
-			<th scope="row" colspan="2">
-				<h2><?php esc_html_e( 'Careers CTA', 'lsx-team' ); ?></h2>
-			</th>
-		</tr>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="team_careers_cta_enable"><?php esc_html_e( 'Enable careers CTA', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="checkbox" {{#if team_careers_cta_enable}} checked="checked" {{/if}} name="team_careers_cta_enable" />
-				<small><?php esc_html_e( 'Displays careers CTA mystery man on team archive.', 'lsx-team' ); ?></small>
-			</td>
-		</tr>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="team_careers_cta_title"><?php esc_html_e( 'Title', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="text" {{#if team_careers_cta_title}} value="{{team_careers_cta_title}}" {{/if}} name="team_careers_cta_title" />
-			</td>
-		</tr>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="team_careers_cta_tagline"><?php esc_html_e( 'Tagline', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="text" {{#if team_careers_cta_tagline}} value="{{team_careers_cta_tagline}}" {{/if}} name="team_careers_cta_tagline" />
-			</td>
-		</tr>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="team_careers_cta_link_text"><?php esc_html_e( 'Link text', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="text" {{#if team_careers_cta_link_text}} value="{{team_careers_cta_link_text}}" {{/if}} name="team_careers_cta_link_text" />
-			</td>
-		</tr>
-		<tr class="form-field">
-			<th scope="row">
-				<label for="team_careers_cta_link"><?php esc_html_e( 'Careers page link', 'lsx-team' ); ?></label>
-			</th>
-			<td>
-				<input type="text" {{#if team_careers_cta_link}} value="{{team_careers_cta_link}}" {{/if}} name="team_careers_cta_link" />
-			</td>
-		</tr>
-		<?php
 	}
 
 	/**

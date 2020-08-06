@@ -25,6 +25,8 @@ define( 'LSX_TEAM_VER', '1.2.3' );
 
 /* ======================= Below is the Plugin Class init ========================= */
 
+require_once LSX_TEAM_PATH . '/classes/class-lsx-team-core.php';
+
 // Post Type and Custom Fields.
 require_once LSX_TEAM_PATH . '/classes/class-lsx-team-admin.php';
 
