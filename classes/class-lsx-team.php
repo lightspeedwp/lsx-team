@@ -17,6 +17,7 @@ class LSX_Team {
 
 		add_action( 'init', array( $this, 'custom_image_sizes' ) );
 		add_filter( 'lsx_banner_allowed_post_types', array( $this, 'lsx_banner_allowed_post_types' ) );
+
 	}
 
 	/**
@@ -221,16 +222,6 @@ class LSX_Team {
 
 					$member_roles = '' !== $roles ? "<small class='lsx-team-roles'>$roles</small>" : '';
 				}
-
-				// Member job title
-
-				/*if ( 50 > strlen( trim( $show_job_title ) ) ) {
-					return false;
-				}
-
-				if ( ! preg_match( '/^\d{5}(\-?\d{4})?$/', $show_job_title ) ) {
-					return false;
-				}*/
 
 				if ( true === $show_job_title || 'true' === $show_job_title ) {
 					$job_title = get_post_meta( $post->ID, 'lsx_job_title', true );

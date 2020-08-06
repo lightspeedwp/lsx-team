@@ -17,6 +17,11 @@ class LSX_Team_Admin {
 		add_action( 'init', array( $this, 'post_type_setup' ) );
 		add_action( 'init', array( $this, 'taxonomy_setup' ) );
 
+		add_action( 'cmb2_admin_init', array( $this, 'details_metabox' ) );
+		add_action( 'cmb2_admin_init', array( $this, 'projects_details_metabox' ) );
+		add_action( 'cmb2_admin_init', array( $this, 'services_details_metabox' ) );
+		add_action( 'cmb2_admin_init', array( $this, 'testimonials_details_metabox' ) );
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 
 		add_filter( 'type_url_form_media', array( $this, 'change_attachment_field_button' ), 20, 1 );
@@ -112,11 +117,15 @@ class LSX_Team_Admin {
 		register_taxonomy( 'team_role', array( 'team' ), $args );
 	}
 
-	public function field_setup( $meta_boxes ) {
+	/**
+	 * Define the metabox and field configurations.
+	 */
+	public function details_metabox() {
 
 		$prefix = 'lsx_';
 
 		$users = get_transient( 'lsx_team_users' );
+
 		if ( false === $users || '' === $users ) {
 			$users = get_users( array(
 				'role__in' => array( 'administrator', 'editor', 'author' ),
@@ -126,141 +135,262 @@ class LSX_Team_Admin {
 
 		foreach ( $users as $user ) {
 			$user_array[] = array(
-				'name' => $user->display_name,
+				'name'  => $user->display_name,
 				'value' => $user->ID,
 			);
 		}
 
-		$fields = array(
+		$cmb = new_cmb2_box(
 			array(
-				'name' => esc_html__( 'Featured:', 'lsx-team' ),
-				'id'   => $prefix . 'featured',
-				'type' => 'checkbox',
-				'show_in_rest' => true,
-			),
-			array(
-				'name' => esc_html__( 'Site User', 'lsx-team' ),
-				'id' => $prefix . 'site_user',
-				'allow_none' => true,
-				'type' => 'select',
-				'options' => $user_array,
-				'show_in_rest' => true,
-			),
-			array(
-				'name' => esc_html__( 'Job Title:', 'lsx-team' ),
-				'id'   => $prefix . 'job_title',
-				'type' => 'text',
-				'show_in_rest' => true,
-			),
-			array(
-				'name' => esc_html__( 'Location:', 'lsx-team' ),
-				'id'   => $prefix . 'location',
-				'type' => 'text',
-			),
-			array(
-				'name' => esc_html__( 'Contact Email Address:', 'lsx-team' ),
-				'id'   => $prefix . 'email_contact',
-				'type' => 'text',
-			),
-			array(
-				'name' => esc_html__( 'Gravatar Email Address:', 'lsx-team' ),
-				'desc' => esc_html__( 'Used for Gravatar if a featured image is not set', 'lsx-team' ),
-				'id'   => $prefix . 'email_gravatar',
-				'type' => 'text',
-			),
-			array(
-				'name' => esc_html__( 'Telephone Number:', 'lsx-team' ),
-				'id'   => $prefix . 'tel',
-				'type' => 'text',
-			),
-			array(
-				'name' => esc_html__( 'Skype Name:', 'lsx-team' ),
-				'id'   => $prefix . 'skype',
-				'type' => 'text',
-			),
-			array(
-				'name' => esc_html__( 'Facebook URL', 'lsx-team' ),
-				'id'   => $prefix . 'facebook',
-				'type' => 'text_url',
-			),
-			array(
-				'name' => esc_html__( 'Twitter URL', 'lsx-team' ),
-				'id'   => $prefix . 'twitter',
-				'type' => 'text_url',
-			),
-			array(
-				'name' => esc_html__( 'LinkedIn URL', 'lsx-team' ),
-				'id'   => $prefix . 'linkedin',
-				'type' => 'text_url',
-			),
+				'id'           => $prefix . '_team',
+				'title'        => esc_html__( 'Team Member Details', 'lsx-team' ),
+				'object_types' => 'team',
+				'context'      => 'normal',
+				'priority'     => 'low',
+				'show_names'   => true,
+			)
 		);
 
-		array_map( 'absint', $fields );
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Featured:', 'lsx-team' ),
+				'id'           => $prefix . 'featured',
+				'type'         => 'checkbox',
+				'value'        => 1,
+				'default'      => 0,
+				'show_in_rest' => true,
+			)
+		);
+
+		// $cmb->add_field(
+		// 	array(
+		// 		'name'         => esc_html__( 'Site User', 'lsx-team' ),
+		// 		'id'           => $prefix . 'site_user',
+		// 		'allow_none'   => true,
+		// 		'type'         => 'select',
+		// 		'options'      => $user_array,
+		// 		'show_in_rest' => true,
+		// 	)
+		// );
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Job Title:', 'lsx-team' ),
+				'id'           => $prefix . 'job_title',
+				'type'         => 'text',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Location:', 'lsx-team' ),
+				'id'           => $prefix . 'location',
+				'type'         => 'text',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Contact Email Address:', 'lsx-team' ),
+				'id'           => $prefix . 'email_contact',
+				'type'         => 'text',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Gravatar Email Address:', 'lsx-team' ),
+				'desc'         => esc_html__( 'Used for Gravatar if a featured image is not set', 'lsx-team' ),
+				'id'           => $prefix . 'email_gravatar',
+				'type'         => 'text',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Telephone Number:', 'lsx-team' ),
+				'id'           => $prefix . 'tel',
+				'type'         => 'text',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Skype Name:', 'lsx-team' ),
+				'id'           => $prefix . 'skype',
+				'type'         => 'text',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Facebook URL', 'lsx-team' ),
+				'id'           => $prefix . 'facebook',
+				'type'         => 'text_url',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Twitter URL', 'lsx-team' ),
+				'id'           => $prefix . 'twitter',
+				'type'         => 'text_url',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'LinkedIn URL', 'lsx-team' ),
+				'id'           => $prefix . 'linkedin',
+				'type'         => 'text_url',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Github URL', 'lsx-team' ),
+				'id'           => $prefix . 'github',
+				'type'         => 'text_url',
+				'show_in_rest' => true,
+			)
+		);
+
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'WordPress URL', 'lsx-team' ),
+				'id'           => $prefix . 'wordpress',
+				'type'         => 'text_url',
+				'show_in_rest' => true,
+			)
+		);
+	}
+
+	/**
+	 * Define the metabox and field configurations.
+	 */
+	public function projects_details_metabox() {
 
 		if ( class_exists( 'LSX_Projects' ) ) {
-			$fields[] = array(
-				'name' => esc_html__( 'Projects:', 'lsx-team' ),
-				'id' => 'project_to_team',
-				'type' => 'post_select',
-				'use_ajax' => false,
-				'query' => array(
-					'post_type' => 'project',
-					'nopagin' => true,
-					'posts_per_page' => '50',
-					'orderby' => 'title',
-					'order' => 'ASC',
-				),
-				'repeatable' => true,
-				'allow_none' => true,
-				'cols' => 12,
+
+			$prefix = 'lsx_';
+
+			$cmb = new_cmb2_box(
+				array(
+					'id'           => $prefix . '_team',
+					'context'      => 'normal',
+					'priority'     => 'low',
+					'show_names'   => true,
+					'object_types' => array( 'team' ),
+				)
+			);
+			$cmb->add_field(
+				array(
+					'name' => esc_html__( 'Projects:', 'lsx-team' ),
+					'id' => 'project_to_team',
+					'type' => 'post_select',
+					'use_ajax' => false,
+					'query' => array(
+						'post_type' => 'project',
+						'nopagin' => true,
+						'posts_per_page' => '50',
+						'orderby' => 'title',
+						'order' => 'ASC',
+					),
+					'repeatable' => true,
+					'allow_none' => true,
+					'cols' => 12,
+					'show_in_rest' => true,
+				)
 			);
 		}
+	}
+
+	/**
+	 * Define the metabox and field configurations.
+	 */
+	public function services_details_metabox() {
 
 		if ( class_exists( 'LSX_Services' ) ) {
-			$fields[] = array(
-				'name' => esc_html__( 'Services:', 'lsx-team' ),
-				'id' => 'service_to_team',
-				'type' => 'post_select',
-				'use_ajax' => false,
-				'query' => array(
-					'post_type' => 'service',
-					'nopagin' => true,
-					'posts_per_page' => '50',
-					'orderby' => 'title',
-					'order' => 'ASC',
-				),
-				'repeatable' => true,
-				'allow_none' => true,
-				'cols' => 12,
+
+			$prefix = 'lsx_';
+
+			$cmb = new_cmb2_box(
+				array(
+					'id'           => $prefix . '_team',
+					'context'      => 'normal',
+					'priority'     => 'low',
+					'show_names'   => true,
+					'object_types' => array( 'team' ),
+				)
+			);
+			$cmb->add_field(
+				array(
+					'name' => esc_html__( 'Services:', 'lsx-team' ),
+					'id' => 'service_to_team',
+					'type' => 'post_select',
+					'use_ajax' => false,
+					'query' => array(
+						'post_type' => 'service',
+						'nopagin' => true,
+						'posts_per_page' => '50',
+						'orderby' => 'title',
+						'order' => 'ASC',
+					),
+					'repeatable' => true,
+					'allow_none' => true,
+					'cols' => 12,
+				)
 			);
 		}
+	}
+
+	/**
+	 * Define the metabox and field configurations.
+	 */
+	public function testimonials_details_metabox() {
 
 		if ( class_exists( 'LSX_Testimonials' ) ) {
-			$fields[] = array(
-				'name' => esc_html__( 'Testimonials:', 'lsx-team' ),
-				'id' => 'testimonial_to_team',
-				'type' => 'post_select',
-				'use_ajax' => false,
-				'query' => array(
-					'post_type' => 'testimonial',
-					'nopagin' => true,
-					'posts_per_page' => '50',
-					'orderby' => 'title',
-					'order' => 'ASC',
-				),
-				'repeatable' => true,
-				'allow_none' => true,
-				'cols' => 12,
+
+			$prefix = 'lsx_';
+
+			$cmb = new_cmb2_box(
+				array(
+					'id'           => $prefix . '_team',
+					'context'      => 'normal',
+					'priority'     => 'low',
+					'show_names'   => true,
+					'object_types' => array( 'team' ),
+				)
+			);
+			$cmb->add_field(
+				array(
+					'name' => esc_html__( 'Testimonials:', 'lsx-team' ),
+					'id' => 'testimonial_to_team',
+					'type' => 'post_select',
+					'use_ajax' => false,
+					'query' => array(
+						'post_type' => 'testimonial',
+						'nopagin' => true,
+						'posts_per_page' => '50',
+						'orderby' => 'title',
+						'order' => 'ASC',
+					),
+					'repeatable' => true,
+					'allow_none' => true,
+					'cols' => 12,
+				)
 			);
 		}
 
-		$meta_boxes[] = array(
-			'title'  => esc_html__( 'Team Member Details', 'lsx-team' ),
-			'pages'  => 'team',
-			'fields' => $fields,
-		);
-
-		return $meta_boxes;
 	}
 
 	/**

@@ -2,6 +2,10 @@
 
 ## [1.2.4]
 
+### Added
+- Added the WordPress link as a new field for each member.
+- Added the Github link as a new field for each member.
+
 ### Changed
 - Remove UIX and Change to CMB2.
 

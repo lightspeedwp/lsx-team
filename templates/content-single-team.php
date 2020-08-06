@@ -12,9 +12,11 @@
 	$job_title = get_post_meta( get_the_ID(), 'lsx_job_title', true );
 
 	$links = array(
-		'facebook' => get_post_meta( get_the_ID(), 'lsx_facebook', true ),
-		'twitter' => get_post_meta( get_the_ID(), 'lsx_twitter', true ),
-		'linkedin' => get_post_meta( get_the_ID(), 'lsx_linkedin', true ),
+		'facebook'  => get_post_meta( get_the_ID(), 'lsx_facebook', true ),
+		'twitter'   => get_post_meta( get_the_ID(), 'lsx_twitter', true ),
+		'linkedin'  => get_post_meta( get_the_ID(), 'lsx_linkedin', true ),
+		'github'    => get_post_meta( get_the_ID(), 'lsx_github', true ),
+		'wordpress' => get_post_meta( get_the_ID(), 'lsx_wordpress', true ),
 	);
 
 	foreach ( $links as $service => $link ) {
