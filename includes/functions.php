@@ -27,10 +27,6 @@ add_action( 'init', 'lsx_team_load_plugin_textdomain' );
 function team_get_option( $key = '', $default = false ) {
 	$options = array();
 
-	if ( function_exists( 'cmb2_get_option' ) ) {
-		return cmb2_get_option( 'lsx_team_options', $key, $default );
-	}
-
 	if ( function_exists( 'tour_operator' ) ) {
 		$options = get_option( '_lsx-to_settings', false );
 	} else {
@@ -40,7 +36,11 @@ function team_get_option( $key = '', $default = false ) {
 			$options = get_option( '_lsx_lsx-settings', false );
 		}
 	}
-
+	// If there are new CMB2 options available, then use those.
+	$new_options = get_option( 'lsx_team_options', false );
+	if ( false !== $new_options ) {
+		$options = $new_options;
+	}
 	return $options;
 }
 
