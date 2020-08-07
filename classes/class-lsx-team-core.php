@@ -17,6 +17,15 @@ class Core {
 	protected static $instance = null;
 
 	/**
+	 * Holds class instance
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var      object \MAG_CMB2_Field_Post_Search_Ajax()
+	 */
+	public $cmb2_post_search_ajax = false;
+
+	/**
 	 * @var object \lsx_team\classes\Admin();
 	 */
 	public $admin;
@@ -30,7 +39,7 @@ class Core {
 	 * Contructor
 	 */
 	public function __construct() {
-
+		add_action( 'init', array( $this, 'cmb2_post_search_ajax' ) );
 	}
 
 	/**
@@ -65,5 +74,15 @@ class Core {
 			}
 		}
 		return $post_types;
+	}
+
+	/**
+	 * Includes the Post Search Ajax if it is there.
+	 *
+	 * @return void
+	 */
+	public function cmb2_post_search_ajax() {
+		require_once LSX_TEAM_PATH . 'vendor/lsx-field-post-search-ajax/cmb-field-post-search-ajax.php';
+		$this->cmb2_post_search_ajax = new \MAG_CMB2_Field_Post_Search_Ajax();
 	}
 }

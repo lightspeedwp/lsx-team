@@ -294,21 +294,16 @@ class LSX_Team_Admin {
 			);
 			$cmb->add_field(
 				array(
-					'name' => esc_html__( 'Projects:', 'lsx-team' ),
-					'id' => 'project_to_team',
-					'type' => 'post_select',
-					'use_ajax' => false,
-					'query' => array(
-						'post_type' => 'project',
-						'nopagin' => true,
-						'posts_per_page' => '50',
-						'orderby' => 'title',
-						'order' => 'ASC',
+					'name'       => __( 'Projects:', 'lsx-team' ),
+					'id'         => 'project_to_team',
+					'type'       => 'post_search_ajax',
+					'limit'      => 15,
+					'sortable'   => true,
+					'query_args' => array(
+						'post_type'      => array( 'project' ),
+						'post_status'    => array( 'publish' ),
+						'posts_per_page' => -1,
 					),
-					'repeatable' => true,
-					'allow_none' => true,
-					'cols' => 12,
-					'show_in_rest' => true,
 				)
 			);
 		}
@@ -334,20 +329,16 @@ class LSX_Team_Admin {
 			);
 			$cmb->add_field(
 				array(
-					'name' => esc_html__( 'Services:', 'lsx-team' ),
-					'id' => 'service_to_team',
-					'type' => 'post_select',
-					'use_ajax' => false,
-					'query' => array(
-						'post_type' => 'service',
-						'nopagin' => true,
-						'posts_per_page' => '50',
-						'orderby' => 'title',
-						'order' => 'ASC',
+					'name'       => __( 'Services:', 'lsx-team' ),
+					'id'         => 'service_to_team',
+					'type'       => 'post_search_ajax',
+					'limit'      => 15,
+					'sortable'   => true,
+					'query_args' => array(
+						'post_type'      => array( 'service' ),
+						'post_status'    => array( 'publish' ),
+						'posts_per_page' => -1,
 					),
-					'repeatable' => true,
-					'allow_none' => true,
-					'cols' => 12,
 				)
 			);
 		}
@@ -373,20 +364,16 @@ class LSX_Team_Admin {
 			);
 			$cmb->add_field(
 				array(
-					'name' => esc_html__( 'Testimonials:', 'lsx-team' ),
-					'id' => 'testimonial_to_team',
-					'type' => 'post_select',
-					'use_ajax' => false,
-					'query' => array(
-						'post_type' => 'testimonial',
-						'nopagin' => true,
-						'posts_per_page' => '50',
-						'orderby' => 'title',
-						'order' => 'ASC',
+					'name'       => __( 'Testimonials:', 'lsx-team' ),
+					'id'         => 'testimonial_to_team',
+					'type'       => 'post_search_ajax',
+					'limit'      => 15,
+					'sortable'   => true,
+					'query_args' => array(
+						'post_type'      => array( 'testimonial' ),
+						'post_status'    => array( 'publish' ),
+						'posts_per_page' => -1,
 					),
-					'repeatable' => true,
-					'allow_none' => true,
-					'cols' => 12,
 				)
 			);
 		}
