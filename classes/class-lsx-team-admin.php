@@ -162,16 +162,16 @@ class LSX_Team_Admin {
 			)
 		);
 
-		// $cmb->add_field(
-		// 	array(
-		// 		'name'         => esc_html__( 'Site User', 'lsx-team' ),
-		// 		'id'           => $prefix . 'site_user',
-		// 		'allow_none'   => true,
-		// 		'type'         => 'select',
-		// 		'options'      => $user_array,
-		// 		'show_in_rest' => true,
-		// 	)
-		// );
+		$cmb->add_field(
+			array(
+				'name'         => esc_html__( 'Site User', 'lsx-team' ),
+				'id'           => $prefix . 'site_user',
+				'allow_none'   => true,
+				'type'         => 'select',
+				'options'      => $user_array,
+				'show_in_rest' => true,
+			)
+		);
 
 		$cmb->add_field(
 			array(
