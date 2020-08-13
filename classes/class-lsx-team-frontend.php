@@ -21,18 +21,18 @@ class LSX_Team_Frontend {
 
 	public function __construct() {
 
-		$this->options = team_get_option();
+		$this->options = team_get_options();
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 5 );
 		add_filter( 'wp_kses_allowed_html', array( $this, 'wp_kses_allowed_html' ), 10, 2 );
 		add_filter( 'template_include', array( $this, 'single_template_include' ), 99 );
 		add_filter( 'template_include', array( $this, 'archive_template_include' ), 99 );
 
-		if ( ! empty( $this->options['team_disable_single'] ) ) {
+		if ( ! empty( $this->options['display']['team_disable_single'] ) ) {
 			add_action( 'template_redirect', array( $this, 'disable_single' ) );
 		}
 
-		if ( ! empty( $this->options['group_by_role'] ) ) {
+		if ( ! empty( $this->options['display']['group_by_role'] ) ) {
 			add_action( 'pre_get_posts', array( $this, 'pre_get_posts_order_by_role' ) );
 			add_action( 'lsx_entry_before', array( $this, 'entry_before' ) );
 		}
