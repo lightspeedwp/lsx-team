@@ -13,7 +13,7 @@ class LSX_Team {
 	public $options;
 
 	public function __construct() {
-		$this->options = team_get_option();
+		$this->options = team_get_options();
 
 		add_action( 'init', array( $this, 'custom_image_sizes' ) );
 		add_filter( 'lsx_banner_allowed_post_types', array( $this, 'lsx_banner_allowed_post_types' ) );
@@ -62,7 +62,6 @@ class LSX_Team {
 				) );
 			}
 		}
-
 		if ( empty( $thumbnail ) ) {
 			if ( $this->options['display'] && ! empty( $this->options['display']['team_placeholder'] ) ) {
 				$thumbnail = '<img loading="lazy" class="img-responsive wp-post-image" src="' . $this->options['display']['team_placeholder'] . '" width="' . $size . '" />';
