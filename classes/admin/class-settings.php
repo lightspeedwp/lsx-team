@@ -103,7 +103,7 @@ class Settings {
 		$cmb->add_field( array(
 			'name'    => 'Placeholder',
 			'desc'    => __( 'Upload an image.', 'lsx-health-plan' ),
-			'id'      => 'team_placeholder_id',
+			'id'      => 'team_placeholder',
 			'type'    => 'file',
 			'options' => array(
 				'url' => false, // Hide the text input for the url.

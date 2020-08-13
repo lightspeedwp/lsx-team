@@ -24,9 +24,8 @@ add_action( 'init', 'lsx_team_load_plugin_textdomain' );
  * @param  mixed  $default Optional default value
  * @return mixed           Option value
  */
-function team_get_option( $key = '', $default = false ) {
+function team_get_options() {
 	$options = array();
-
 	if ( function_exists( 'tour_operator' ) ) {
 		$options = get_option( '_lsx-to_settings', false );
 	} else {
@@ -36,12 +35,45 @@ function team_get_option( $key = '', $default = false ) {
 			$options = get_option( '_lsx_lsx-settings', false );
 		}
 	}
+
 	// If there are new CMB2 options available, then use those.
 	$new_options = get_option( 'lsx_team_options', false );
 	if ( false !== $new_options ) {
-		$options = $new_options;
+		$options['display'] = $new_options;
 	}
 	return $options;
+}
+
+/**
+ * Wrapper function around cmb2_get_option
+ * @since  0.1.0
+ * @param  string $key     Options array key
+ * @param  mixed  $default Optional default value
+ * @return mixed           Option value
+ */
+function team_get_option( $key = '', $default = false ) {
+	$options = array();
+	$value   = $default;
+	if ( function_exists( 'tour_operator' ) ) {
+		$options = get_option( '_lsx-to_settings', false );
+	} else {
+		$options = get_option( '_lsx_settings', false );
+
+		if ( false === $options ) {
+			$options = get_option( '_lsx_lsx-settings', false );
+		}
+	}
+
+	// If there are new CMB2 options available, then use those.
+	$new_options = get_option( 'lsx_team_options', false );
+	if ( false !== $new_options ) {
+		$options['display'] = $new_options;
+	}
+
+	if ( isset( $options['display'] ) && isset( $options['display'][ $key ] ) ) {
+		$value = $options['display'][ $key ];
+	}
+	return $value;
 }
 
 /**
