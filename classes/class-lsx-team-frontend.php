@@ -46,6 +46,7 @@ class LSX_Team_Frontend {
 		add_filter( 'lsx_fonts_css', array( $this, 'customizer_fonts_handler' ), 15 );
 		add_filter( 'lsx_banner_title', array( $this, 'lsx_banner_archive_title' ), 15 );
 		add_filter( 'lsx_banner_title', array( $this, 'lsx_banner_single_title' ), 15 );
+		add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ), 100 );
 
 		add_filter( 'excerpt_more_p', array( $this, 'change_excerpt_more' ) );
 		add_filter( 'excerpt_length', array( $this, 'change_excerpt_length' ) );
@@ -209,6 +210,19 @@ class LSX_Team_Frontend {
 			$title = '<h1 class="page-title">' . esc_html__( 'Team', 'lsx-team' ) . '</h1>';
 		}
 
+		return $title;
+	}
+
+	/**
+	 * Remove the "Archives:" from the post type recipes.
+	 *
+	 * @param string $title the term title.
+	 * @return string
+	 */
+	public function get_the_archive_title( $title ) {
+		if ( is_post_type_archive( 'team' ) ) {
+			$title = __( 'Team', 'lsx-health-plan' );
+		}
 		return $title;
 	}
 
