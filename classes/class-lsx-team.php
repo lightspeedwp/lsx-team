@@ -65,9 +65,9 @@ class LSX_Team {
 
 		if ( empty( $thumbnail ) ) {
 			if ( $this->options['display'] && ! empty( $this->options['display']['team_placeholder'] ) ) {
-				$thumbnail = '<img class="img-responsive wp-post-image" src="' . $this->options['display']['team_placeholder'] . '" width="' . $size . '" />';
+				$thumbnail = '<img loading="lazy" class="img-responsive wp-post-image" src="' . $this->options['display']['team_placeholder'] . '" width="' . $size . '" />';
 			} else {
-				$thumbnail = '<img class="img-responsive wp-post-image" src="https://www.gravatar.com/avatar/none?d=mm&s=' . $size . '" width="' . $size . '" />';
+				$thumbnail = '<img loading="lazy" class="img-responsive wp-post-image" src="https://www.gravatar.com/avatar/none?d=mm&s=' . $size . '" width="' . $size . '" />';
 			}
 		}
 

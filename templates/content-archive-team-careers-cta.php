@@ -6,7 +6,7 @@
 
 <?php if ( ! empty( team_get_option( 'team_careers_cta_enable' ) ) ) : ?>
 	<?php
-		$thumbnail = '<img class="img-responsive wp-post-image" src="https://www.gravatar.com/avatar/none?d=mm&s=170" width="170" />';
+		$thumbnail = '<img loading="lazy" class="img-responsive wp-post-image" src="https://www.gravatar.com/avatar/none?d=mm&s=170" width="170" />';
 		$title     = team_get_option( 'team_careers_cta_title' );
 		$tagline   = team_get_option( 'team_careers_cta_tagline' );
 		$link_text = team_get_option( 'team_careers_cta_link_text' );
