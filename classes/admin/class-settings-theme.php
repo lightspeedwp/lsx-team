@@ -206,6 +206,7 @@ class Settings_Theme {
 						if ( 0 === tab || '0' === tab ) {
 							tab = '';
 						}
+
 						LSX_TEAM_CMB2.addTabInput( tab );
 						LSX_TEAM_CMB2.prepNavigation( tab );
 						LSX_TEAM_CMB2.watchNavigation();
@@ -219,8 +220,7 @@ class Settings_Theme {
 					LSX_TEAM_CMB2.prepNavigation = function( tab = '' ) {
 						var counter = 1;
 						$( ".tab.tab-nav" ).each(function(){
-							console.log( tab );
-							if ( ( 1 !== counter && '' === tab ) || ( '' !== tab && 'settings_' + tab + '_tab' !== $( this ).attr('id') ) ) {
+							if ( ( 1 !== counter && '' === tab ) || ( '' !== tab && tab + '_tab' !== $( this ).attr('id') ) ) {
 								$( this ).hide().removeClass('hidden');
 							} else {
 								$( this ).addClass( 'current' ).removeClass('hidden');
