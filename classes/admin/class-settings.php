@@ -5,6 +5,8 @@
  * @package lsx-team
  */
 
+namespace lsx\team\classes\admin;
+
 class Settings {
 
 	/**

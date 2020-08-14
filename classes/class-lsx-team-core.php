@@ -5,14 +5,14 @@
  *
  * @package lsx-team
  */
-class Core {
+class LSX_Team_Core {
 
 	/**
 	 * Holds class instance
 	 *
 	 * @since 1.0.0
 	 *
-	 * @var      object \lsx_team\classes\Core()
+	 * @var      object LSX_Team_Core()
 	 */
 	protected static $instance = null;
 
@@ -26,20 +26,11 @@ class Core {
 	public $cmb2_post_search_ajax = false;
 
 	/**
-	 * @var object \lsx_team\classes\Admin();
-	 */
-	public $admin;
-
-	/**
-	 * @var object \lsx_team\classes\Frontend();
-	 */
-	public $frontend;
-
-	/**
 	 * Contructor
 	 */
 	public function __construct() {
 		add_action( 'init', array( $this, 'cmb2_post_search_ajax' ) );
+		$this->load_vendors();
 	}
 
 	/**
@@ -58,6 +49,16 @@ class Core {
 
 		return self::$instance;
 
+	}
+
+	/**
+	 * Loads the plugin functions.
+	 */
+	private function load_vendors() {
+		// Configure custom fields.
+		if ( ! class_exists( 'CMB2' ) ) {
+			require_once LSX_TEAM_PATH . 'vendor/CMB2/init.php';
+		}
 	}
 
 	/**
@@ -86,3 +87,4 @@ class Core {
 		$this->cmb2_post_search_ajax = new \MAG_CMB2_Field_Post_Search_Ajax();
 	}
 }
+LSX_Team_Core::get_instance();

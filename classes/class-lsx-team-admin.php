@@ -33,10 +33,10 @@ class LSX_Team_Admin {
 	 */
 	private function load_classes() {
 		require_once LSX_TEAM_PATH . 'classes/admin/class-settings.php';
-		$this->settings = Settings::get_instance();
+		$this->settings = \lsx\team\classes\admin\Settings::get_instance();
 
 		require_once LSX_TEAM_PATH . 'classes/admin/class-settings-theme.php';
-		$this->settings_theme = Settings_Theme::get_instance();
+		$this->settings_theme = \lsx\team\classes\admin\Settings_Theme::get_instance();
 	}
 
 	public function post_type_setup() {

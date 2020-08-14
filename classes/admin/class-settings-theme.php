@@ -1,6 +1,6 @@
 <?php
 
-//use CMB_Tab_Field;
+namespace lsx\team\classes\admin;
 
 /**
  * Houses the functions for the CMB2 Settings page.
