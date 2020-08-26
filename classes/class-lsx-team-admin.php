@@ -135,7 +135,7 @@ class LSX_Team_Admin {
 
 		foreach ( $users as $user ) {
 			$user_array[] = array(
-				'name'  => $user->display_name,
+				'name'  => $user->nice_name,
 				'value' => $user->ID,
 			);
 		}

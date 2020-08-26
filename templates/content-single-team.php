@@ -97,7 +97,7 @@
 
 	$tab_project['post_type'] = 'project';
 	$tab_project['title'] = esc_html__( 'Projects', 'lsx-team' );
-	$tab_project['posts'] = get_post_meta( get_the_ID(), 'project_to_team', false );
+	$tab_project['posts'] = get_post_meta( get_the_ID(), 'project_to_team', true );
 
 	if ( is_plugin_active( 'lsx-projects/lsx-projects.php' ) && ( ! empty( $tab_project['posts'] ) ) ) {
 		$post_ids = join( ',', $tab_project['posts'] );
@@ -110,7 +110,7 @@
 	if ( is_plugin_active( 'lsx-services/lsx-services.php' ) ) {
 		$tab_service['post_type'] = 'service';
 		$tab_service['title'] = esc_html__( 'Services', 'lsx-team' );
-		$tab_service['posts'] = get_post_meta( get_the_ID(), 'service_to_team', false );
+		$tab_service['posts'] = get_post_meta( get_the_ID(), 'service_to_team', true );
 
 		if ( ! empty( $tab_service['posts'] ) ) {
 			$post_ids = join( ',', $tab_service['posts'] );
@@ -123,7 +123,7 @@
 
 	$tab_testimonial['post_type'] = 'testimonial';
 	$tab_testimonial['title'] = esc_html__( 'Testimonials', 'lsx-team' );
-	$tab_testimonial['posts'] = get_post_meta( get_the_ID(), 'testimonial_to_team', false );
+	$tab_testimonial['posts'] = get_post_meta( get_the_ID(), 'testimonial_to_team', true );
 
 	if ( is_plugin_active( 'lsx-testimonials/lsx-testimonials.php' ) && ( ! empty( $tab_testimonial['posts'] ) ) ) {
 		if ( count( $tab_testimonial['posts'] ) <= 2 ) {
