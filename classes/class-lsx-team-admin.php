@@ -76,10 +76,9 @@ class LSX_Team_Admin {
 				'editor',
 				'excerpt',
 				'thumbnail',
+				'custom-fields',
 			),
 			'show_in_rest'          => true,
-			'rest_base'             => 'team',
-			'rest_controller_class' => 'WP_REST_Posts_Controller',
 		);
 
 		register_post_type( 'team', $args );
@@ -110,8 +109,6 @@ class LSX_Team_Admin {
 				'slug' => 'team-role',
 			),
 			'show_in_rest'          => true,
-			'rest_base'             => 'teamrole',
-			'rest_controller_class' => 'WP_REST_Terms_Controller',
 		);
 
 		register_taxonomy( 'team_role', array( 'team' ), $args );
