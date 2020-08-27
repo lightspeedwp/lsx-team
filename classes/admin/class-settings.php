@@ -99,12 +99,12 @@ class Settings {
 				'type'        => 'checkbox',
 				'value'       => 1,
 				'default'     => 0,
-				'description' => __( 'Groups the Team on the Team archive by the role assigned.', 'lsx-health-plan' ),
+				'description' => __( 'This setting creates Role sub-headings on the Team Member archive.', 'lsx-health-plan' ),
 			)
 		);
 		$cmb->add_field( array(
 			'name'    => 'Placeholder',
-			'desc'    => __( 'Upload an image.', 'lsx-health-plan' ),
+			'desc'    => __( 'This image displays on the archive, search results and team members single if not featured image is set.', 'lsx-health-plan' ),
 			'id'      => 'team_placeholder',
 			'type'    => 'file',
 			'options' => array(
