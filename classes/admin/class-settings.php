@@ -104,7 +104,7 @@ class Settings {
 		);
 		$cmb->add_field( array(
 			'name'    => 'Placeholder',
-			'desc'    => __( 'This image displays on the archive, search results and team members single if not featured image is set.', 'lsx-health-plan' ),
+			'desc'    => __( 'This image displays on the archive, search results and team members single if no featured image is set.', 'lsx-health-plan' ),
 			'id'      => 'team_placeholder',
 			'type'    => 'file',
 			'options' => array(
