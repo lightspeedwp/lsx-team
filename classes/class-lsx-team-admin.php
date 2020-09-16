@@ -131,10 +131,7 @@ class LSX_Team_Admin {
 		}
 
 		foreach ( $users as $user ) {
-			$user_array[] = array(
-				'name'  => $user->nice_name,
-				'value' => $user->ID,
-			);
+			$user_array[$user->ID] = $user->user_login;
 		}
 
 		$cmb = new_cmb2_box(
