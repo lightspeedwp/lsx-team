@@ -1,4 +1,4 @@
-@mixin customizer-team-link-colour ($color: #418AD0, $hover: #F7AE00) {
+@mixin customizer-team-link-colour($color: #418ad0, $hover: #f7ae00) {
 	&,
 	&:active,
 	&:visited {
@@ -12,8 +12,14 @@
 	}
 }
 
-@mixin customizer-team-body-colours($bg: #F6F6F6, $breaker: #DADDDF, $color: #4A4A4A, $link: #418AD0, $hover: #F7AE00, $small: #919191) {
-
+@mixin customizer-team-body-colours(
+	$bg: #f6f6f6,
+	$breaker: #dadddf,
+	$color: #4a4a4a,
+	$link: #418ad0,
+	$hover: #f7ae00,
+	$small: #919191
+) {
 	.lsx-team-archive-link {
 		&:before,
 		&:after {
@@ -35,9 +41,13 @@
 	#lsx-team-slider {
 		.slick-dots {
 			& > li {
-				& > button { border-color: $color; }
+				& > button {
+					border-color: $color;
+				}
 
-				&.slick-active > button { background-color: $color; }
+				&.slick-active > button {
+					background-color: $color;
+				}
 			}
 		}
 
@@ -59,21 +69,23 @@
 
 	.single.single-team {
 		.entry-tabs {
-			.tab-pane { background-color: #FFF; }
-
 			.nav-tabs {
 				& > li {
 					& > a {
-						background-color: #FFF;
+						background-color: #fff;
 
-						&:hover { background-color: #FFF; }
+						&:hover {
+							background-color: #fff;
+						}
 					}
 
 					&.active > a {
 						background-color: $link;
-						color: #FFF;
+						color: #fff;
 
-						&:after { border-color: transparent transparent $bg transparent; }
+						&:after {
+							border-color: transparent transparent $bg transparent;
+						}
 					}
 				}
 			}
@@ -83,9 +95,11 @@
 			& > li {
 				& > a {
 					background-color: $color;
-					color: #FFF;
+					color: #fff;
 
-					&:hover { background-color: $hover; }
+					&:hover {
+						background-color: $hover;
+					}
 				}
 			}
 		}

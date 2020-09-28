@@ -85,7 +85,7 @@
 
 					if ( ! empty( $tab_post['posts'] ) ) {
 						$post_ids = join( ',', $tab_post['posts'] );
-						$tab_post['shortcode'] = '[lsx_posts columns="3" include="' . $post_ids . '"]';
+						$tab_post['shortcode'] = '[lsx_posts columns="3" limit="9" include="' . $post_ids . '"]';
 						$tabs[] = $tab_post;
 					}
 				}

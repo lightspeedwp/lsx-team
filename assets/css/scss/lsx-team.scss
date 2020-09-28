@@ -1,9 +1,11 @@
- @import 'include-media';
- @import 'customizer-team-body-colours';
+@import 'include-media';
+@import 'customizer-team-body-colours';
 
 .widget.lsx-team {
 	.tagline {
-		& + .lsx-team-shortcode { margin-top: 0; }
+		& + .lsx-team-shortcode {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -28,11 +30,17 @@
 		width: 999rem;
 	}
 
-	&:before { right: 120%; }
-	&:after { left: 120%; }
+	&:before {
+		right: 120%;
+	}
+	&:after {
+		left: 120%;
+	}
 }
 
-.lsx-team-shortcode { margin-top: -4rem; }
+.lsx-team-shortcode {
+	margin-top: -4rem;
+}
 
 .lsx-team-slot {
 	margin-top: 4rem;
@@ -59,7 +67,9 @@
 		margin-top: 0;
 	}
 
-	.lsx-team-description { margin-top: 2.4rem; }
+	.lsx-team-description {
+		margin-top: 2.4rem;
+	}
 
 	ul.lsx-team-socials {
 		margin: 2.4rem 0 0;
@@ -69,7 +79,9 @@
 			padding-left: 1rem;
 			padding-right: 1rem;
 
-			& > a { font-size: 22px; }
+			& > a {
+				font-size: 22px;
+			}
 		}
 	}
 
@@ -82,7 +94,9 @@
 		display: inline-block;
 		margin-top: 15px;
 
-		& > .fa { margin-left: 1rem; }
+		& > .fa {
+			margin-left: 1rem;
+		}
 	}
 }
 
@@ -92,7 +106,9 @@
 		margin-right: auto;
 		width: 100%;
 
-		&.slick-has-arrows { width: calc(100% - 8rem); }
+		&.slick-has-arrows {
+			width: calc(100% - 8rem);
+		}
 	}
 
 	@include media('>=1280px') {
@@ -100,8 +116,9 @@
 		margin-right: -15px;
 		width: calc(100% + 30px);
 
-		&.slick-has-arrows { width: calc(100% + 30px); }
-
+		&.slick-has-arrows {
+			width: calc(100% + 30px);
+		}
 	}
 
 	.tab-pane & {
@@ -113,7 +130,9 @@
 			margin-right: auto;
 			width: 100%;
 
-			&.slick-has-arrows { width: calc(100% - 8rem); }
+			&.slick-has-arrows {
+				width: calc(100% - 8rem);
+			}
 		}
 	}
 
@@ -136,7 +155,9 @@
 			line-height: 1;
 			padding: 5px;
 
-			@include media('>=tablet') { padding: 0 7.5px; }
+			@include media('>=tablet') {
+				padding: 0 7.5px;
+			}
 
 			& > button {
 				background: transparent;
@@ -147,7 +168,9 @@
 				transition: all 300ms ease-in-out;
 				width: 4rem;
 
-				@include media('>=tablet') { height: 6px; }
+				@include media('>=tablet') {
+					height: 6px;
+				}
 			}
 		}
 	}
@@ -185,7 +208,9 @@
 			-moz-osx-font-smoothing: grayscale;
 		}
 
-		&.slick-disabled { cursor: not-allowed; }
+		&.slick-disabled {
+			cursor: not-allowed;
+		}
 
 		&.slick-prev {
 			left: -4rem;
@@ -257,9 +282,11 @@
 .single.single-team {
 	.entry-tabs {
 		.tab-pane {
-			padding: 4rem;
+			padding: 0;
 
-			@include media('>=phone') { padding: 4rem 2rem; }
+			@include media('>=phone') {
+				padding: 4rem 0;
+			}
 		}
 
 		.nav-tabs {
@@ -274,9 +301,12 @@
 			justify-content: flex-start;
 			border-bottom: 0 none;
 			margin: 4.25rem 0 15px 0;
-			padding-left: 0;
+			padding-left: 10px;
+			padding-right: 10px;
 
-			@include media('>=phone') { flex-flow: row nowrap; }
+			@include media('>=phone') {
+				flex-flow: row nowrap;
+			}
 
 			& > li {
 				margin-bottom: 0;
@@ -285,11 +315,13 @@
 				@include media('>=phone') {
 					display: flex;
 					flex: 1 1 auto;
-					max-width: 350px;
+					max-width: 370px;
 				}
 
 				& + li {
-					@include media('>=phone') { margin-left: 10px; }
+					@include media('>=phone') {
+						margin-left: 10px;
+					}
 				}
 
 				& > a {
@@ -308,7 +340,9 @@
 						justify-content: center;
 					}
 
-					@include media('>=tablet') { font-size: 22px; }
+					@include media('>=tablet') {
+						font-size: 22px;
+					}
 				}
 
 				&.active > a {
@@ -327,9 +361,23 @@
 							transform: translateX(-50%);
 							width: 0;
 
-							@include media('>=tablet') { border-width: 0 9px 9px 9px; }
+							@include media('>=tablet') {
+								border-width: 0 9px 9px 9px;
+							}
 						}
 					}
+				}
+			}
+		}
+		.lsx-blog-customizer-posts-wrapper {
+			width: 100%;
+			.slick-arrow {
+				display: none !important;
+			}
+			.post-slot {
+				&.slick-slide {
+					margin-left: 10px;
+					margin-right: 10px;
 				}
 			}
 		}
@@ -346,7 +394,10 @@
 		& > img {
 			width: 100%;
 
-			&.lazyload, &.lazyloading { width: auto; }
+			&.lazyload,
+			&.lazyloading {
+				width: auto;
+			}
 		}
 	}
 
@@ -378,7 +429,9 @@
 		margin: 2.4rem 0 4.25rem;
 		padding: 0;
 
-		@include media('>=tablet') { margin: 2rem 0 0; }
+		@include media('>=tablet') {
+			margin: 2rem 0 0;
+		}
 
 		& > li {
 			margin-left: 15px;
@@ -397,7 +450,9 @@
 		}
 	}
 
-	.lsx-team-name { margin-bottom: 0; }
+	.lsx-team-name {
+		margin-bottom: 0;
+	}
 
 	.lsx-team-job-title {
 		margin-bottom: 0;
@@ -415,7 +470,9 @@
 		padding-left: 0;
 		margin-top: 4.25rem;
 
-		li { margin-bottom: 5px; }
+		li {
+			margin-bottom: 5px;
+		}
 
 		.fa {
 			font-size: 22px;
@@ -425,4 +482,4 @@
 	}
 }
 
-@include customizer-team-body-colours(#F6F6F6, #DADDDF, #4A4A4A, #418AD0, #F7AE00, #919191);
+@include customizer-team-body-colours(#f6f6f6, #dadddf, #4a4a4a, #418ad0, #f7ae00, #919191);

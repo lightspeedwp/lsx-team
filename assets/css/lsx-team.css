@@ -85,11 +85,11 @@
 
 .archive.post-type-archive-team .lsx-team-slot { margin-bottom: 4.5rem; margin-top: 4.5rem; }
 
-.single.single-team .entry-tabs .tab-pane { padding: 4rem; }
+.single.single-team .entry-tabs .tab-pane { padding: 0; }
 
-@media (min-width: 768px) { .single.single-team .entry-tabs .tab-pane { padding: 4rem 2rem; } }
+@media (min-width: 768px) { .single.single-team .entry-tabs .tab-pane { padding: 4rem 0; } }
 
-.single.single-team .entry-tabs .nav-tabs { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; border-bottom: 0 none; margin: 4.25rem 0 15px 0; padding-left: 0; }
+.single.single-team .entry-tabs .nav-tabs { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; border-bottom: 0 none; margin: 4.25rem 0 15px 0; padding-left: 10px; padding-right: 10px; }
 
 .single.single-team .entry-tabs .nav-tabs:before, .single.single-team .entry-tabs .nav-tabs:after { display: none; }
 
@@ -97,7 +97,7 @@
 
 .single.single-team .entry-tabs .nav-tabs > li { margin-bottom: 0; width: 100%; }
 
-@media (min-width: 768px) { .single.single-team .entry-tabs .nav-tabs > li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; max-width: 350px; } }
+@media (min-width: 768px) { .single.single-team .entry-tabs .nav-tabs > li { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; max-width: 370px; } }
 
 @media (min-width: 768px) { .single.single-team .entry-tabs .nav-tabs > li + li { margin-left: 10px; } }
 
@@ -112,6 +112,12 @@
 @media (min-width: 768px) { .single.single-team .entry-tabs .nav-tabs > li.active > a:after { content: ''; border-style: solid; border-width: 0 6px 6px 6px; bottom: 0; height: 0; left: 50%; position: absolute; -webkit-transform: translateX(-50%); transform: translateX(-50%); width: 0; } }
 
 @media (min-width: 768px) and (min-width: 992px) { .single.single-team .entry-tabs .nav-tabs > li.active > a:after { border-width: 0 9px 9px 9px; } }
+
+.single.single-team .entry-tabs .lsx-blog-customizer-posts-wrapper { width: 100%; }
+
+.single.single-team .entry-tabs .lsx-blog-customizer-posts-wrapper .slick-arrow { display: none !important; }
+
+.single.single-team .entry-tabs .lsx-blog-customizer-posts-wrapper .post-slot.slick-slide { margin-left: 10px; margin-right: 10px; }
 
 .single.single-team .lsx-team-avatar { border-radius: 50%; display: block; height: 32rem; margin: 0 auto 10px; overflow: hidden; width: 32rem; }
 
@@ -143,36 +149,34 @@
 
 .single.single-team .lsx-team-contact .fa { font-size: 22px; margin-right: 5px; vertical-align: top; }
 
-.lsx-team-archive-link:before, .lsx-team-archive-link:after { background-color: #DADDDF; }
+.lsx-team-archive-link:before, .lsx-team-archive-link:after { background-color: #dadddf; }
 
-.lsx-team-slot .lsx-team-name > a:not(.btn), .lsx-team-slot .lsx-team-name > a:not(.btn):active, .lsx-team-slot .lsx-team-name > a:not(.btn):visited { color: #4A4A4A; }
+.lsx-team-slot .lsx-team-name > a:not(.btn), .lsx-team-slot .lsx-team-name > a:not(.btn):active, .lsx-team-slot .lsx-team-name > a:not(.btn):visited { color: #4a4a4a; }
 
-.lsx-team-slot .lsx-team-name > a:not(.btn):hover, .lsx-team-slot .lsx-team-name > a:not(.btn):hover:active, .lsx-team-slot .lsx-team-name > a:not(.btn):focus { color: #F7AE00; }
+.lsx-team-slot .lsx-team-name > a:not(.btn):hover, .lsx-team-slot .lsx-team-name > a:not(.btn):hover:active, .lsx-team-slot .lsx-team-name > a:not(.btn):focus { color: #f7ae00; }
 
 .lsx-team-slot .lsx-team-roles, .lsx-team-slot .lsx-team-job-title { color: #919191; }
 
-#lsx-team-slider .slick-dots > li > button { border-color: #4A4A4A; }
+#lsx-team-slider .slick-dots > li > button { border-color: #4a4a4a; }
 
-#lsx-team-slider .slick-dots > li.slick-active > button { background-color: #4A4A4A; }
+#lsx-team-slider .slick-dots > li.slick-active > button { background-color: #4a4a4a; }
 
-#lsx-team-slider .slick-arrow { border-color: #4A4A4A; color: #4A4A4A; }
+#lsx-team-slider .slick-arrow { border-color: #4a4a4a; color: #4a4a4a; }
 
-#lsx-team-slider .slick-arrow:hover { border-color: #F7AE00; color: #F7AE00; }
+#lsx-team-slider .slick-arrow:hover { border-color: #f7ae00; color: #f7ae00; }
 
-#lsx-team-slider .slick-arrow.slick-disabled { border-color: #DADDDF; color: #DADDDF; }
+#lsx-team-slider .slick-arrow.slick-disabled { border-color: #dadddf; color: #dadddf; }
 
-.single.single-team .entry-tabs .tab-pane { background-color: #FFF; }
+.single.single-team .entry-tabs .nav-tabs > li > a { background-color: #fff; }
 
-.single.single-team .entry-tabs .nav-tabs > li > a { background-color: #FFF; }
+.single.single-team .entry-tabs .nav-tabs > li > a:hover { background-color: #fff; }
 
-.single.single-team .entry-tabs .nav-tabs > li > a:hover { background-color: #FFF; }
+.single.single-team .entry-tabs .nav-tabs > li.active > a { background-color: #418ad0; color: #fff; }
 
-.single.single-team .entry-tabs .nav-tabs > li.active > a { background-color: #418AD0; color: #FFF; }
+.single.single-team .entry-tabs .nav-tabs > li.active > a:after { border-color: transparent transparent #f6f6f6 transparent; }
 
-.single.single-team .entry-tabs .nav-tabs > li.active > a:after { border-color: transparent transparent #F6F6F6 transparent; }
+.single.single-team .lsx-team-socials > li > a { background-color: #4a4a4a; color: #fff; }
 
-.single.single-team .lsx-team-socials > li > a { background-color: #4A4A4A; color: #FFF; }
-
-.single.single-team .lsx-team-socials > li > a:hover { background-color: #F7AE00; }
+.single.single-team .lsx-team-socials > li > a:hover { background-color: #f7ae00; }
 
 /*# sourceMappingURL=maps/lsx-team.css.map */
