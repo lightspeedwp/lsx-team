@@ -93,10 +93,14 @@
 
 		.lsx-team-socials {
 			& > li {
-				& > a {
+				& > a,
+				& > a:visited,
+				& > a:active {
 					background-color: $color;
 					color: #fff;
-
+					i {
+						color: #fff;
+					}
 					&:hover {
 						background-color: $hover;
 					}

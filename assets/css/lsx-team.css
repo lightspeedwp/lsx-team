@@ -77,6 +77,8 @@
 
 .gutenberg-compatible-template.using-gutenberg .lsx-team-block.full, .gutenberg-compatible-template.using-gutenberg #lsx-team-slider.lsx-team-block.full { max-width: 100%; width: calc(100% + 30px); margin-left: -15px; margin-right: -15px; }
 
+.gutenberg-compatible-template.using-gutenberg .lsx-team-block .slick-dots, .gutenberg-compatible-template.using-gutenberg #lsx-team-slider.lsx-team-block .slick-dots { margin-left: auto; margin-right: auto; }
+
 .archive.post-type-archive-team .site-main { margin: 0; width: auto; }
 
 .archive.post-type-archive-team .lsx-team-container { margin-bottom: -4.5rem; margin-top: -4.5rem; }
@@ -175,8 +177,10 @@
 
 .single.single-team .entry-tabs .nav-tabs > li.active > a:after { border-color: transparent transparent #f6f6f6 transparent; }
 
-.single.single-team .lsx-team-socials > li > a { background-color: #4a4a4a; color: #fff; }
+.single.single-team .lsx-team-socials > li > a, .single.single-team .lsx-team-socials > li > a:visited, .single.single-team .lsx-team-socials > li > a:active { background-color: #4a4a4a; color: #fff; }
 
-.single.single-team .lsx-team-socials > li > a:hover { background-color: #f7ae00; }
+.single.single-team .lsx-team-socials > li > a i, .single.single-team .lsx-team-socials > li > a:visited i, .single.single-team .lsx-team-socials > li > a:active i { color: #fff; }
+
+.single.single-team .lsx-team-socials > li > a:hover, .single.single-team .lsx-team-socials > li > a:visited:hover, .single.single-team .lsx-team-socials > li > a:active:hover { background-color: #f7ae00; }
 
 /*# sourceMappingURL=maps/lsx-team.css.map */
