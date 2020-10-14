@@ -98,7 +98,6 @@
 	$tab_project['post_type'] = 'project';
 	$tab_project['title'] = esc_html__( 'Projects', 'lsx-team' );
 	$tab_project['posts'] = get_post_meta( get_the_ID(), 'project_to_team', true );
-
 	if ( is_plugin_active( 'lsx-projects/lsx-projects.php' ) && ( ! empty( $tab_project['posts'] ) ) ) {
 		$post_ids = join( ',', $tab_project['posts'] );
 		$tab_project['shortcode'] = '[lsx_projects columns="3" include="' . $post_ids . '"]';

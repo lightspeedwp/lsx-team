@@ -7,6 +7,7 @@
 - Added the WordPress link as a new field for each member.
 - Added the Github link as a new field for each member.
 - Added default WP 5.5 lazyloading.
+- Added template for 'Role' taxonomy.
 
 ### Changed
 

@@ -121,6 +121,12 @@ class LSX_Team_Frontend {
 			}
 		}
 
+		if ( is_tax( 'team_role' ) ) {
+			if ( empty( locate_template( array( 'taxonomy-team_role.php' ) ) ) && file_exists( LSX_TEAM_PATH . 'templates/taxonomy-team_role.php' ) ) {
+				$template = LSX_TEAM_PATH . 'templates/taxonomy-team_role.php';
+			}
+		}
+
 		return $template;
 	}
 
