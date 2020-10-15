@@ -163,7 +163,7 @@ class LSX_Team {
 			$carousel = true === $carousel || 'true' === $carousel ? true : false;
 
 			if ( $carousel ) {
-				$output .= "<div class='lsx-team-shortcode' id='lsx-team-slider' data-slick='{\"slidesToShow\": $columns, \"slidesToScroll\": $columns }'>";
+				$output .= "<div class='lsx-team-shortcode lsx-team-block' id='lsx-team-slider' data-slick='{\"slidesToShow\": $columns, \"slidesToScroll\": $columns }'>";
 			} else {
 				$output .= "<div class='lsx-team-shortcode'><div class='row'>";
 			}

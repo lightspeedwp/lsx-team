@@ -13,6 +13,10 @@
 
 - Removed UIX and Changed to CMB2.
 
+### Fixed
+
+- Fixed the multiple carousels not displaying issue.
+
 ### Security
 
 - Updating dependencies to prevent vulnerabilities.
