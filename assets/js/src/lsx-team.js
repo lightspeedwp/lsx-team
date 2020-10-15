@@ -3,7 +3,7 @@
  */
 
 (function($) {
-	var $teamSlider = $('.lsx-team-block');
+	var $teamSlider = $('.wrap.container .lsx-team-block');
 
 	$teamSlider.on('init', function(event, slick) {
 		if (slick.options.arrows && slick.slideCount > slick.options.slidesToShow)
