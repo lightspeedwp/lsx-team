@@ -5,10 +5,6 @@
 (function($) {
 	var $teamSlider = $('.lsx-team-block');
 
-	$teamSlider.each(function() {
-		console.log(this);
-	});
-
 	$teamSlider.on('init', function(event, slick) {
 		if (slick.options.arrows && slick.slideCount > slick.options.slidesToShow)
 			$teamSlider.addClass('slick-has-arrows');
