@@ -235,21 +235,24 @@
 .gutenberg-compatible-template.using-gutenberg {
 	.lsx-team-block,
 	#lsx-team-slider.lsx-team-block {
-		max-width: 60%;
-		width: 60%;
+		
+		@media (min-width: 1200px) {
+			max-width: 90rem;
+			width: 90rem;
+		}
 		margin-left: auto;
 		margin-right: auto;
 		&.wide {
-			max-width: 80%;
-			width: 80%;
+			max-width: 120rem;
+			width: calc( 100vw - 8rem );
 			margin-left: auto;
 			margin-right: auto;
 		}
 		&.full {
 			max-width: 100%;
 			width: calc(100% + 30px);
-			margin-left: -15px;
-			margin-right: -15px;
+			//margin-left: -15px;
+			//margin-right: -15px;
 		}
 		.slick-dots {
 			margin-left: auto;
@@ -289,7 +292,7 @@
 			padding: 0;
 
 			@include media('>=phone') {
-				padding: 4rem 0;
+				padding: 1rem 0;
 			}
 		}
 
@@ -375,9 +378,6 @@
 		}
 		.lsx-blog-customizer-posts-wrapper {
 			width: 100%;
-			.slick-arrow {
-				display: none !important;
-			}
 			.post-slot {
 				&.slick-slide {
 					margin-left: 10px;
