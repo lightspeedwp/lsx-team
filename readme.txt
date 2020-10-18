@@ -1,35 +1,35 @@
 === LSX Team ===
-Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, virginialsdev, deon80, jaab1985, jacquesvdh, ignusvermaak, garthlsdev
-Donate link: https://donate.lsdev.biz/
+Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, jacquesvdh, ignusvermaak
+Donate link: https://lsdev.biz/lsx/donate/
 Tags: lsx, post type, team, team widget, team display
-Requires at least: 5.3
-Tested up to: 5.5
-Requires PHP: 7.2
+Requires at least: 5.0
+Tested up to: 5.5.1
+Requires PHP: 7.0
 Stable tag: 1.3.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) adds a section to your website for storing your team members information. 
+The [LSX Team plugin](https://www.lsdev.biz/lsx/extensions/team/) adds a section to your website for storing your team members information. 
 
 Create a profile per team member, display them in an attractive carousel and house them all in an archive for all your users to view. 
 
 People like to see a face behind a business, it gives you a more personal, approachable relationship with your users. 
 
-The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) plugin allows you to display your team profiles beautifully on your website. 
+The [LSX Team plugin](hhttps://www.lsdev.biz/lsx/extensions/team/) plugin allows you to display your team profiles beautifully on your website. 
 
 == Works with the LSX Theme ==
 
-Our  [theme](https://lsx.lsdev.biz/) works perfectly with the Team Extension, improving internal linking, website SEO and user experience! 
+Our  [theme](https://www.lsdev.biz/lsx/) works perfectly with the Team Extension, improving internal linking, website SEO and user experience! 
 
 == Gutenberg Compatible Plugin ==
 
 Have you updated to the new WordPress Gutenberg editor? We've got you covered! The LSX Team Plugin has been optimised for the Gutenberg update. 
 
-Check out our [release post](https://lsx.lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
+Check out our [release post](https://www.lsdev.biz/lsx-blocks-available-on-wordpress-org/) on the update for more information.
 
 == It's free, and always will be. ==
 
-We’re firm believers in open source - that’s why the [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) is free, and that won't change. 
+We’re firm believers in open source - that’s why the [LSX Team plugin](hhttps://www.lsdev.biz/lsx/extensions/team/) is free, and that won't change. 
 
 We are constantly maintaining and updating our extension so you have the latest and greatest abilities on your LSX Theme powered site. 
 
@@ -37,9 +37,9 @@ We are constantly maintaining and updating our extension so you have the latest 
 
 We have created extensive documentation on all of the LSX Team Plugin functionality. This means a hassle free installation and setup with no code requirements. 
 
-Go to the [LSX Team Documentation](https://lsx.lsdev.biz/documentation/lsx-team/).
+Go to the [LSX Team Documentation](https://www.lsdev.biz/lsx/documentation/lsx-extensions/lsx-team/).
 
-== LSX Team Help & Support ==
+== Support ==
 
 We offer premium support for this plugin. Premium support that can be purchased [via our website](https://www.lsdev.biz/services/support/).
 
