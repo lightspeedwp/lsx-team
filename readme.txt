@@ -1,7 +1,7 @@
 === LSX Team ===
 Contributors: feedmymedia, lightspeedwp, eleshar, krugazul, jacquesvdh, ignusvermaak
 Donate link: https://lsdev.biz/lsx/donate/
-Tags: lsx, post type, team, team widget, team display
+Tags: lsx, team, team members, our team, block editor support
 Requires at least: 5.0
 Tested up to: 5.5.1
 Requires PHP: 7.0
