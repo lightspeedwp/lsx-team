@@ -6,6 +6,8 @@
   <a href="https://lsdev.biz/lsx/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2019/06/Designed-for-LSX-Theme-blue.png" alt="Made for LSX Theme"></a>
 	<a href="https://lsdev.biz/lsx/extensions/tour-operator/"><img src="https://www.lsdev.biz/lsx/wp-content/uploads/2019/06/Designed-for-Tour-Operator-plugin-1098ad.png" alt="LSX Tour Operator"></a>
   <a href="http://gulpjs.com/"><img src="https://img.shields.io/badge/built%20with-gulp.js-green.svg" alt="Built with gulp.js"></a> 
+	    <a href="https://codeclimate.com/github/lightspeeddevelopment/lsx-team"><img src="https://codeclimate.com/github/lightspeeddevelopment/lsx-team/badges/gpa.svg" alt="Code Climate"></a>
+    <a href="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-team/?branch=master"><img src="https://scrutinizer-ci.com/g/lightspeeddevelopment/lsx-team/badges/quality-score.png?b=master" alt="Scrutinizer"></a>
     <a href="https://travis-ci.org/github/lightspeeddevelopment/lsx-team/"><img src="https://travis-ci.org/lightspeeddevelopment/lsx-team.svg?branch=master" alt="Build Status"></a>
 </p>
 
