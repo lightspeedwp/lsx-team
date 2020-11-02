@@ -93,11 +93,11 @@
 
 @media (min-width: 768px) { .single.single-team .entry-tabs .tab-pane { padding: 1rem 0; } }
 
-.single.single-team .entry-tabs .nav-tabs { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; border-bottom: 0 none; margin: 4.25rem 0 15px 0; padding-right: 10px; padding-left: 10px; }
+.single.single-team .entry-tabs .nav-tabs { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-flow: column nowrap; flex-flow: column nowrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; border-bottom: 0 none; margin: 4.25rem 0 15px 0; }
 
 .single.single-team .entry-tabs .nav-tabs:before, .single.single-team .entry-tabs .nav-tabs:after { display: none; }
 
-@media (min-width: 768px) { .single.single-team .entry-tabs .nav-tabs { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row nowrap; flex-flow: row nowrap; } }
+@media (min-width: 768px) { .single.single-team .entry-tabs .nav-tabs { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row nowrap; flex-flow: row nowrap; padding-right: 10px; padding-left: 10px; } }
 
 .single.single-team .entry-tabs .nav-tabs > li { margin-bottom: 0; width: 100%; }
 
