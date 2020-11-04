@@ -308,11 +308,11 @@
 			justify-content: flex-start;
 			border-bottom: 0 none;
 			margin: 4.25rem 0 15px 0;
-			padding-left: 10px;
-			padding-right: 10px;
 
 			@include media('>=phone') {
 				flex-flow: row nowrap;
+				padding-left: 10px;
+				padding-right: 10px;
 			}
 
 			& > li {
