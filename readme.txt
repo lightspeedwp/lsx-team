@@ -55,7 +55,7 @@ Installation from WordPress admin dashboard:
 
 Download from WordPress.org:
 
-*Go to the [plugin page](https://wordpress.org/plugins/lsx-team/) or use this [direct download link](https://downloads.wordpress.org/plugin/lsx-team.1.2.3.zip).
+*Go to the [plugin page](https://wordpress.org/plugins/lsx-team/) or use this [direct download link](https://downloads.wordpress.org/plugin/lsx-team.zip).
 *Click the Download button to download the zip file.
 *Log into your WordPress admin dashboard and go to Plugins > Add new.
 *Then click Upload plugin.
