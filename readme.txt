@@ -23,17 +23,30 @@ Use the [LSX Blocks plugin](https://wordpress.org/plugins/lsx-blocks/) to get a 
 
 [View a demo of the LSX Team plugin]( https://www.lsdev.biz/lsx/extensions/team/ )
 
-= Works with the LSX Theme =
-This plugin is developed to extend the functionality of the LSX Theme. You can download the LSX Theme on WordPress.org - https://wordpress.org/themes/lsx/
+= Free Companion Theme = 
+
+LSX Team is built to show off the best of the WordPress block editor, but it requires the free LSX theme in the WordPress theme repository as the perfect companion for LSX Blocks - https://wordpress.org/themes/lsx/
+
+= Works with the LSX Theme == Block Editor Support = 
+
+The LSX theme is full compatible with the WordPress block editor. This means you can now make use of the drag-and-drop page builder when creating new pages and posts. 
+
+[LSX Blocks](https://lsdev.biz/lsx/extensions/blocks) is an extension with blocks designed to display perfectly with the LSX theme. The blocks plugin extends various WordPress core blocks to be more flexible with the WordPress theme. 
+
+The combination of LSX Theme & LSX Blocks gives you a true page builder experience using the WordPress Gutenberg block editor.
+
+= Demo Pages = 
+
+* [Team landing page](https://lsx-demo.lsdev.biz/team/)
+* [Team landing page](https://lsx-demo.lsdev.biz/team/ashley-shaw/)
+* [Team landing page](https://lsx-demo.lsdev.biz/blocks/lsx-team-block/)
 
 = Documentation =
 We have extensive documentation on all our plugins and theme functionality. This allows you to take control of your website setup and design to your needs: 
 
-* [LSX Team Documentation](https://lsdev.biz/lsx/documentation/team/).
-* [Theme Options](https://lsdev.biz/lsx/documentation/lsx-theme/theme-options/)
-* [Customizer](https://lsdev.biz/lsx/documentation/lsx-theme/lsx-customizer/)
-* [Page Templates](https://lsdev.biz/lsx/documentation/lsx-theme/page-templates/)
-* [Menus](https://lsdev.biz/lsx/documentation/lsx-theme/menus/)
+* [LSX Team Documentation](https://www.lsdev.biz/lsx/documentation/lsx-extensions/lsx-team/).
+* [LSX Theme](https://lsdev.biz/lsx/documentation/lsx-theme/)
+* [LSX Blocks](https://www.lsdev.biz/lsx/documentation/lsx-blocks/)
 
 = Support =
 Contact the [LightSpeed](https://lsdev.biz/) for assistance via the [LSX support form](https://www.lsdev.biz/lsx/support/).
