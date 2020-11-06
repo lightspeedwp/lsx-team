@@ -161,7 +161,7 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-6 col-md-8">
-			<h2 class="lsx-team-name"><?php the_title(); ?></h2>
+			<h1 class="lsx-team-name"><?php the_title(); ?></h1>
 			<h5 class="lsx-team-job-title"><?php echo esc_html( $job_title ); ?></h5>
 			<div class="lsx-team-content"><?php the_content(); ?></div>
 
