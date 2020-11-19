@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Use the LSX Team plugin to show your website visitors the faces and names behind the business, and tell them about yourself and your team members.
  
 == Description ==
-The [LSX Team plugin](https://lsx.lsdev.biz/extensions/team/) adds a Team post type to your website for adding staff members or creating profiles for people on your website.  You can add a bio, contact details, job information, location, and social handles for each Team Member.  
+The [LSX Team plugin](https://lsdev.biz/lsx/extensions/team/) adds a Team post type to your website for adding staff members or creating profiles for people on your website.  You can add a bio, contact details, job information, location, and social handles for each Team Member.  
 
 People like to see a face behind a business, it gives you a more personal, approachable relationship with your users. 
 
@@ -22,20 +22,20 @@ Use the [LSX Blocks plugin](https://wordpress.org/plugins/lsx-blocks/) to get a 
 
 [View a demo of the LSX Team plugin]( https://www.lsdev.biz/lsx/extensions/team/ )
 
-== Works with the LSX Theme ==
+= Works with the LSX Theme =
 This plugin is developed to extend the functionality of the LSX Theme. You can download the LSX Theme on WordPress.org - https://wordpress.org/themes/lsx/
 
-== Documentation ==
+= Documentation =
 We have extensive documentation on all our plugins and theme functionality. This allows you to take control of your website setup and design to your needs: 
 
-* [LSX Team Documentation](https://lsx.lsdev.biz/documentation/team/).
+* [LSX Team Documentation](https://lsdev.biz/lsx/documentation/team/).
 * [Theme Options](https://lsdev.biz/lsx/documentation/lsx-theme/theme-options/)
 * [Customizer](https://lsdev.biz/lsx/documentation/lsx-theme/lsx-customizer/)
 * [Page Templates](https://lsdev.biz/lsx/documentation/lsx-theme/page-templates/)
 * [Menus](https://lsdev.biz/lsx/documentation/lsx-theme/menus/)
 * [Third Party Plugins](https://lsdev.biz/lsx/documentation/lsx-theme/third-party-plugins/)
 
-== Support ==
+= Support =
 Contact the [LightSpeed](https://lsdev.biz/) for assistance via the [LSX support form](https://www.lsdev.biz/lsx/support/).
 
 If you are experiencing issues with the LSX  plugin, please log any bug issues you are having on the [LSX Team Issues](https://github.com/lightspeeddevelopment/lsx-Team/issues) page.
@@ -55,7 +55,7 @@ Installation from WordPress admin dashboard:
 
 Download from WordPress.org:
 
-*Go to the [plugin page](https://wordpress.org/plugins/lsx-team/) or use this [direct download link](https://downloads.wordpress.org/plugin/lsx-team.1.2.3.zip).
+*Go to the [plugin page](https://wordpress.org/plugins/lsx-team/) or use this [direct download link](https://downloads.wordpress.org/plugin/lsx-team.zip).
 *Click the Download button to download the zip file.
 *Log into your WordPress admin dashboard and go to Plugins > Add new.
 *Then click Upload plugin.
