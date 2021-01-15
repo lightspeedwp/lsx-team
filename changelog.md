@@ -1,5 +1,14 @@
 # Change log
 
+## [1.3.1]
+
+### Updated
+- Documentation and support links.
+- Semantic layout of the heading 1 and heading 2.
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (5.6).
+
 ## [1.3.0]
 
 ### Added

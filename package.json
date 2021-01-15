@@ -1,6 +1,6 @@
 {
   "name": "lsx-team",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Team for LSX",
   "main": "gulpfile.js",
   "scripts": {
