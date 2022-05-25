@@ -1,5 +1,10 @@
 # Change log
 
+## [1.3.2]
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.0).
+
 ## [1.3.1]
 
 ### Updated
