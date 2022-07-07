@@ -1,5 +1,10 @@
 # Change log
 
+## [1.3.3] - In Development
+
+### Fixed
+- Updated the SCPO drag and drop functionality for PHP 8.0
+
 ## [1.3.2]
 
 ### Security
