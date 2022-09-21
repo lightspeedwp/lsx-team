@@ -1,14 +1,12 @@
 # Change log
 
-## [1.3.3] - In Development
+## [1.3.2]
 
 ### Fixed
 - Updated the SCPO drag and drop functionality for PHP 8.0
 
-## [1.3.2]
-
 ### Security
-- General testing to ensure compatibility with latest WordPress version (6.0).
+- General testing to ensure compatibility with latest WordPress version (6.0.2).
 
 ## [1.3.1]
 
