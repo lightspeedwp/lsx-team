@@ -3,7 +3,7 @@
  * Plugin Name: LSX Team
  * Plugin URI:  https://www.lsdev.biz/product/lsx-team/
  * Description: The LSX Team extension provides a custom post type that allows you to easily show off the people that make up your business.
- * Version:     1.3.2
+ * Version:     1.3.3
  * Author:      LightSpeed
  * Author URI:  https://www.lsdev.biz/
  * License:     GPL3
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'LSX_TEAM_PATH', plugin_dir_path( __FILE__ ) );
 define( 'LSX_TEAM_CORE', __FILE__ );
 define( 'LSX_TEAM_URL', plugin_dir_url( __FILE__ ) );
-define( 'LSX_TEAM_VER', '1.3.2' );
+define( 'LSX_TEAM_VER', '1.3.3' );
 
 
 /* ======================= Below is the Plugin Class init ========================= */
