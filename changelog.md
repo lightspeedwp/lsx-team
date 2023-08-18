@@ -1,5 +1,10 @@
 # Change log
 
+## [[1.3.5]](https://github.com/lightspeeddevelopment/lsx-sharing/releases/tag/1.3.5) - 2023-08-18
+
+### Security
+- General testing to ensure compatibility with latest WordPress version (6.3).
+
 ## [[1.3.4]](https://github.com/lightspeeddevelopment/lsx-sharing/releases/tag/1.3.4) - 2023-04-20
 
 ### Security
