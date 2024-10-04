@@ -1,0 +1,48 @@
+{
+    "type": "postType",
+    "postType": "lsx-team",
+    "slug": "team",
+    "label": "Team",
+    "pluralLabel": "Teams",
+    "icon": "groups",
+    "template": [
+      {
+        "blockName": "core/paragraph",
+        "attrs": {
+          "placeholder": "Load your team member's name"
+        },
+        "innerBlocks": [],
+        "innerHTML": "\n<p>innerHTML</p>\n",
+        "innerContent": ["\n<p>innerContent</p>\n"]
+      },
+      {
+        "blockName": "core/paragraph",
+        "attrs": [],
+        "innerBlocks": [],
+        "innerHTML": "\n<p>innerHTML</p>\n",
+        "innerContent": ["\n<p>innerContent</p>\n"]
+      },
+      {
+        "blockName": "core/paragraph",
+        "attrs": [],
+        "innerBlocks": [],
+        "innerHTML": "\n<p>innerHTML</p>\n",
+        "innerContent": ["\n<p>innerContent</p>\n"]
+      }
+    ],
+    "fields": [
+      {
+        "slug": "lsx_team_location",
+        "type": "text",
+        "label": "Location",
+        "description": "City team member is based in."
+      },
+      {
+        "slug": "lsx_team_role",
+        "type": "text",
+        "label": "Role",
+        "description": "The role of the team member."
+      }
+    ]
+  }
+  

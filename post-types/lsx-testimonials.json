@@ -1,0 +1,57 @@
+{
+  "type": "postType",
+  "postType": "lsx-testimonials",
+  "slug": "testimonials",
+  "label": "Testimonial",
+  "pluralLabel": "Testimonials",
+  "icon": "quote",
+  "template": [
+    {
+      "blockName": "core/heading",
+      "attrs": {
+        "level": 2,
+        "placeholder": "Add testimonial title"
+      },
+      "innerBlocks": [],
+      "innerHTML": "\n<p>innerHTML</p>\n",
+      "innerContent": ["\n<p>innerContent</p>\n"]
+    },
+    {
+      "blockName": null,
+      "attrs": [],
+      "innerBlocks": [],
+      "innerHTML": "\n\n",
+      "innerContent": ["\n\n"]
+    },
+    {
+      "blockName": "core/paragraph",
+      "attrs": {
+        "placeholder": "Add testimonial content"
+      },
+      "innerBlocks": [],
+      "innerHTML": "\n<p>innerHTML</p>\n",
+      "innerContent": ["\n<p>innerContent</p>\n"]
+    },
+    {
+      "blockName": null,
+      "attrs": [],
+      "innerBlocks": [],
+      "innerHTML": "\n<p>innerHTML</p>\n",
+      "innerContent": ["\n<p>innerContent</p>\n"]
+    }
+  ],
+  "fields": [
+    {
+      "slug": "lsx_testimonials_location",
+      "type": "text",
+      "label": "Location",
+      "description": "City where the client is based in."
+    },
+    {
+      "slug": "lsx_testimonials_role",
+      "type": "text",
+      "label": "Role",
+      "description": "The role of the client."
+    }
+  ]
+}

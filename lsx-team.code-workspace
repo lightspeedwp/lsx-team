@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../Downloads/playground-tools-trunk"
+		}
+	],
+	"settings": {
+		"chat.editor.wordWrap": "on",
+		"editor.wordWrap": "wordWrapColumn",
+		"diffEditor.wordWrap": "on",
+		"notebook.output.wordWrap": true
+	},
+	"extensions": {
+		"recommendations": [
+			"github.remotehub"
+		]
+	}
+}
